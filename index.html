@@ -440,7 +440,7 @@
 
   <!-- ADMISSION -->
   <section id="admission">
-    <div class="grid">
+   <div class="grid" style="align-items: start;">
       
       <!-- Left side: Google Form -->
       <div class="card">
@@ -468,7 +468,7 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="grid">
+    <div class="grid" style="align-items: start;">
       <div class="card">
         <h2 data-i18n="contact.title">Contact Us</h2>
         <p><strong data-i18n="contact.addr.label">Address:</strong> <span id="schoolAddress">Kalatiya Bazaar, Keraniganj Model, Dhaka 1313</span></p>
@@ -563,7 +563,6 @@ menuBtn.addEventListener('click', () => tabsNav.classList.toggle('open'));
 
 document.getElementById('applyBtn').addEventListener('click', () => {
   document.querySelector('.tab[data-tab="admission"]').click();
-  document.getElementById('studentName').focus();
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
