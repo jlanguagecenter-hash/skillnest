@@ -115,7 +115,7 @@
   section.active{display:block;animation:fadeIn .25s ease}
   @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 
-  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:0 8px 24px rgba(2,6,23,.05)}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:0 8px 24px rgba(2,6,23,.05); min-width:0; overflow:hidden;}
   .hero-img{width:100%;height:260px;object-fit:cover;border-radius:12px}
   .instructor-img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid #eef2ff}
   .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
@@ -134,8 +134,11 @@
   th,td{padding:12px;border-bottom:1px solid var(--border);text-align:left}
   th{background:#f1f5f9}
   tbody tr:last-child td{border-bottom:none}
-  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .table-wrap table{min-width:560px}
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch; padding-bottom: 12px;}
+  .table-wrap::-webkit-scrollbar { height: 6px; }
+  .table-wrap::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 10px; }
+  .table-wrap::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+  .table-wrap table{min-width: 100%;}
 
   .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
   .testi-card{background:#f8fafc;border:1px solid var(--border);border-radius:14px;padding:16px}
@@ -175,8 +178,8 @@
     .hero-card::before{font-size:80px;right:-8px;top:-10px}
     .kpi .num{font-size:19px}
     .kpi{padding:12px}
-    table{font-size:13px}
-    th,td{padding:8px}
+    table { font-size: 12px; }
+    th, td { padding: 8px 6px; white-space: normal; }
     .news-bar{flex-wrap:wrap;padding:8px 12px}
     
     /* Header & Apply Now Button Fixes for Mobile */
@@ -503,7 +506,7 @@
         <p class="notice" data-i18n="contact.fbNote">Our latest posts, shown live from our Facebook Page. like and follow us for more updates.</p>
         <div class="fb-page"
           data-href="https://www.facebook.com/skillnestJLS"
-          data-tabs="timeline" data-width="500" data-height="500"
+          data-tabs="timeline" data-width="320" data-height="500"
           data-small-header="true" data-adapt-container-width="true"
           data-hide-cover="false" data-show-facepile="false">
           <blockquote cite="https://www.facebook.com/skillnestJLS" class="fb-xfbml-parse-ignore">
