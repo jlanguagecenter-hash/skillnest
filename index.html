@@ -29,7 +29,13 @@
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
     font-family:Inter,"Noto Sans Bengali","Noto Sans JP",system-ui,sans-serif;
-    line-height:1.65;-webkit-font-smoothing:antialiased;color-scheme:light}
+    line-height:1.65;-webkit-font-smoothing:antialiased;color-scheme:light;
+    overflow-x: hidden; width: 100%;}
+    
+  /* ফেইসবুক উইজেটকে কার্ডের বাইরে যেতে বাধা দেবে */
+  .fb-page, .fb-page span, .fb-page iframe {
+    max-width: 100% !important;
+  }
   a{color:var(--brand);text-decoration:none}
   img{max-width:100%;height:auto;display:block}
   .container{max-width:1120px;margin:0 auto;padding:20px}
@@ -172,8 +178,16 @@
     table{font-size:13px}
     th,td{padding:8px}
     .news-bar{flex-wrap:wrap;padding:8px 12px}
-    .brand h1{font-size:16px}
-    .logo{width:36px;height:36px}
+    
+    /* Header & Apply Now Button Fixes for Mobile */
+    .nav { padding: 10px 8px; gap: 6px; }
+    .brand { gap: 6px; }
+    .brand h1 { font-size: 15px; }
+    .logo { width: 30px; height: 30px; }
+    .controls { gap: 6px; }
+    .lang { padding: 6px 4px; font-size: 12px; }
+    #applyBtn { padding: 7px 10px; font-size: 12px; }
+    .menuBtn { padding: 6px 8px; }
     .hero-img{height:190px}
   }
 </style>
