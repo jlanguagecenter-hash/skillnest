@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SkillNest | Japanese Language School</title>
+<meta name="description" content="SkillNest – Japanese language (N5/N4/N3, Conversation, JLPT, Embassy & School Interview Prep) and skills training in Bangladesh." />
+<meta property="og:title" content="SkillNest" />
+<meta property="og:description" content="Japanese language school in Bangladesh." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;600;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --muted:#475569;
+    --text:#0f172a;
+    --brand:#2563eb;
+    --brand-2:#10b981;
+    --accent:#7c3aed;
+    --danger:#dc2626;
+    --border:#e2e8f0;
+    --ring:0 0 0 3px rgba(37,99,235,.35);
+    --radius:18px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+    font-family:Inter,"Noto Sans Bengali","Noto Sans JP",system-ui,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;color-scheme:light}
+  a{color:var(--brand);text-decoration:none}
+  img{max-width:100%;height:auto;display:block}
+  .container{max-width:1120px;margin:0 auto;padding:20px}
+  :focus-visible{outline:3px solid rgba(37,99,235,.5);outline-offset:2px}
+
+  .hero-card{position:relative;overflow:hidden}
+  .hero-card::before{content:"日本語";position:absolute;right:-14px;top:-18px;font-size:150px;font-weight:800;
+    color:rgba(37,99,235,.06);font-family:"Noto Sans JP",sans-serif;line-height:1;pointer-events:none;user-select:none}
+  .eyebrow{display:inline-flex;align-items:center;gap:6px;background:#eef2ff;color:var(--brand);
+    border:1px solid #c7d7fe;padding:6px 13px;border-radius:999px;font-size:12.5px;font-weight:700;margin-bottom:14px}
+  .why-list{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:11px;position:relative}
+  .why-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--text)}
+  .why-list .ico{flex-shrink:0;width:22px;height:22px;border-radius:7px;margin-top:1px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;
+    display:grid;place-items:center;font-size:12px;font-weight:800}
+
+  /* Prominent news bar — shown right at the top of Home so it's the first thing seen */
+  .news-bar{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--brand),var(--accent));
+    color:#fff;border-radius:14px;padding:10px 16px;margin-bottom:18px;overflow:hidden}
+  .news-bar .news-label{flex-shrink:0;font-weight:800;font-size:12.5px;background:rgba(255,255,255,.18);
+    padding:5px 10px;border-radius:999px;letter-spacing:.02em}
+  .news-bar .news-track{overflow:hidden;flex:1}
+  .news-bar .news-inner{display:flex;gap:48px;white-space:nowrap;animation:scroll 20s linear infinite}
+  .news-bar:hover .news-inner{animation-play-state:paused}
+
+  /* Batch cards on Home */
+  .batch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
+  .batch-card{background:#f8fafc;border:1px solid var(--border);border-radius:14px;padding:16px;position:relative}
+  .batch-card .seatBadge{position:absolute;top:14px;right:14px;background:#ecfdf5;color:#065f46;
+    border:1px solid #a7f3d0;font-size:11.5px;font-weight:800;padding:4px 9px;border-radius:999px}
+  .batch-card h4{margin:0 0 6px;font-size:16px}
+  .batch-card p{margin:0;font-size:13.5px;color:var(--muted)}
+
+  /* Video / gallery grids */
+  .video-grid,.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}
+  .video-card{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;background:#000}
+  .video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .gallery-card{border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#f1f5f9}
+  .gallery-card img{width:100%;height:190px;object-fit:cover;display:block}
+  .gallery-card .cap{padding:8px 10px;font-size:12.5px;color:var(--muted)}
+
+  /* Contact quick-links */
+  .contact-links{display:grid;gap:10px;margin-top:14px}
+  .contact-link{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:12px;
+    border:1px solid var(--border);background:#f8fafc;color:var(--text);font-weight:600;font-size:14px}
+  .contact-link:hover{background:#eef2ff}
+  .contact-link .cico{width:22px;text-align:center;flex-shrink:0}
+
+  header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 20px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .logo{width:42px;height:42px;border-radius:12px;background:transparent;display:grid;place-items:center;color:var(--brand);font-weight:800;flex-shrink:0}
+  .brand h1{font-size:18px;margin:0;font-weight:800;white-space:nowrap}
+  .brand small{display:block;color:var(--muted);font-size:12px;font-weight:500;white-space:nowrap}
+
+  .tabs{display:flex;flex-wrap:wrap;gap:8px}
+  .tab{padding:9px 14px;border-radius:999px;background:#fff;border:1px solid var(--border);cursor:pointer;color:var(--text);font-weight:600;font-size:14px}
+  .tab.active{background:linear-gradient(135deg,rgba(37,99,235,.10),rgba(16,185,129,.10));border-color:#bfdbfe;color:var(--brand)}
+
+  .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  select,input,textarea,button{font:inherit}
+  .lang{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #cbd5e1;color:var(--text)}
+  .btn{padding:10px 16px;border-radius:12px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer;font-weight:700;transition:transform .05s ease,box-shadow .2s ease}
+  .btn:hover{box-shadow:0 6px 20px rgba(2,6,23,.08)}
+  .btn:active{transform:translateY(1px)}
+  .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(37,99,235,.28)}
+  .btn.primary:hover{box-shadow:0 8px 22px rgba(37,99,235,.38)}
+  .btn.block{width:100%;text-align:center;display:block}
+  .btn:disabled{opacity:.6;cursor:not-allowed}
+  #applyBtn{padding:9px 18px;font-size:13.5px;border-radius:999px}
+
+  .menuBtn{display:none;background:none;border:1px solid var(--border);border-radius:10px;padding:8px 10px;cursor:pointer}
+
+  main{padding:26px 0 60px}
+  section{display:none}
+  section.active{display:block;animation:fadeIn .25s ease}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:0 8px 24px rgba(2,6,23,.05)}
+  .hero-img{width:100%;height:260px;object-fit:cover;border-radius:12px}
+  .instructor-img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid #eef2ff}
+  .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:12px;margin-top:16px}
+  .kpi{background:#f8fafc;border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center}
+  .kpi .num{font-size:26px;font-weight:800;color:var(--brand)}
+  .kpi .lbl{font-size:13px;color:var(--muted);margin-top:2px}
+
+  .ticker{margin-top:16px;background:#eef2ff;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+  .ticker-inner{display:flex;gap:48px;white-space:nowrap;animation:scroll 22s linear infinite;padding:11px 0}
+  .ticker:hover .ticker-inner{animation-play-state:paused}
+  @keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+  @media (prefers-reduced-motion: reduce){ .ticker-inner{animation:none} }
+
+  table{width:100%;border-collapse:collapse;border:1px solid var(--border);overflow:hidden;border-radius:14px}
+  th,td{padding:12px;border-bottom:1px solid var(--border);text-align:left}
+  th{background:#f1f5f9}
+  tbody tr:last-child td{border-bottom:none}
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .table-wrap table{min-width:560px}
+
+  .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
+  .testi-card{background:#f8fafc;border:1px solid var(--border);border-radius:14px;padding:16px}
+  .testi-card p{margin:0 0 10px;font-size:14.5px;color:var(--text)}
+  .testi-card .who{font-size:13px;color:var(--muted);font-weight:700}
+
+  form{display:grid;gap:12px}
+  label{font-size:13px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px}
+  input,textarea,select{width:100%;background:#fff;border:1px solid #cbd5e1;color:var(--text);padding:11px 12px;border-radius:12px;outline:none}
+  input:focus,textarea:focus,select:focus{box-shadow:var(--ring);border-color:#93c5fd}
+  input.invalid{border-color:var(--danger)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .notice{font-size:.92rem;color:var(--muted)}
+  .err{font-size:.82rem;color:var(--danger);min-height:1em}
+  .status{padding:10px 12px;border-radius:10px;font-size:.9rem;margin-top:4px;display:none}
+  .status.ok{display:block;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0}
+  .status.bad{display:block;background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+
+  footer{border-top:1px solid var(--border);padding:30px 20px;color:var(--muted);text-align:center;font-size:.9rem}
+
+  @media (max-width: 860px){
+    .grid{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr}
+    .menuBtn{display:inline-flex}
+    .tabs{position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--border);flex-direction:column;padding:10px 16px;display:none;box-shadow:0 10px 24px rgba(2,6,23,.08)}
+    .tabs.open{display:flex}
+    header{position:sticky}
+    .nav{position:relative;padding:10px 14px}
+    .brand small{display:none}
+    #applyBtn{padding:8px 14px;font-size:12.5px}
+  }
+  @media (max-width: 480px){
+    .container{padding:14px}
+    .card{padding:16px}
+    h2{font-size:1.22rem}
+    h3{font-size:1.05rem}
+    .hero-card::before{font-size:80px;right:-8px;top:-10px}
+    .kpi .num{font-size:19px}
+    .kpi{padding:12px}
+    table{font-size:13px}
+    th,td{padding:8px}
+    .news-bar{flex-wrap:wrap;padding:8px 12px}
+    .brand h1{font-size:16px}
+    .logo{width:36px;height:36px}
+    .hero-img{height:190px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="nav container">
+    <div class="brand">
+      <div class="logo"><img src="logo.png" alt="School Logo" onerror="this.style.display='none'; this.parentElement.textContent='SN';" style="width:100%;height:100%;object-fit:contain;border-radius:12px"></div>
+      <div>
+        <h1 data-i18n="brand">SkillNest</h1>
+        <small data-i18n="tagline">Japanese Language &amp; Skills Training</small>
+      </div>
+    </div>
+    <button class="menuBtn" id="menuBtn" aria-label="Menu">☰</button>
+    <nav class="tabs" role="tablist" aria-label="Main Navigation" id="tabsNav">
+      <button class="tab active" data-tab="home" data-i18n="nav.home">Home</button>
+      <button class="tab" data-tab="about" data-i18n="nav.about">About</button>
+      <button class="tab" data-tab="courses" data-i18n="nav.courses">Courses &amp; Fees</button>
+      <button class="tab" data-tab="services" data-i18n="nav.services">Services</button>
+      <button class="tab" data-tab="gallery" data-i18n="nav.gallery">Gallery</button>
+      <button class="tab" data-tab="admission" data-i18n="nav.admission">Admission</button>
+      <button class="tab" data-tab="contact" data-i18n="nav.contact">Contact</button>
+    </nav>
+    <div class="controls">
+      <select class="lang" id="langSelect" aria-label="Language">
+        <option value="bn">বাংলা</option>
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+      </select>
+      <button class="btn primary" id="applyBtn" data-i18n="btn.apply">Apply Now</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- HOME -->
+  <section id="home" class="active">
+    <div class="news-bar">
+      <span class="news-label" data-i18n="news.label">📢 NEWS</span>
+      <div class="news-track"><div class="news-inner" id="newsTicker"></div></div>
+    </div>
+    <div class="card hero-card">
+      <span class="eyebrow" data-i18n="home.eyebrow">Bangla-medium Japanese Language Institute</span>
+      <h2 data-i18n="home.title">Learn Japanese. Open the Door to Japan.</h2>
+      <p data-i18n="home.subtitle">Structured, exam-focused Japanese classes — from N5 to N3, conversation, and interview preparation — taught live online, in Bangla, by experienced teachers.</p>
+      <div class="kpis">
+        <div class="kpi"><div class="num">20:1</div><div class="lbl" data-i18n="home.kpi1">Student–Teacher Ratio</div></div>
+        <div class="kpi"><div class="num">4</div><div class="lbl" data-i18n="home.kpi2">Months per Core Course</div></div>
+        <div class="kpi"><div class="num" data-i18n="home.kpi3num">100% Online</div><div class="lbl" data-i18n="home.kpi3">All Classes Live via Zoom/Meet</div></div>
+      </div>
+      <ul class="why-list">
+        <li><span class="ico">✓</span><span data-i18n="home.why1">Curriculum built around Minna no Nihongo, the textbook used at most language schools in Japan</span></li>
+        <li><span class="ico">✓</span><span data-i18n="home.why2">Bilingual (Bangla–Japanese) teachers who explain grammar the way Bangladeshi students actually understand it</span></li>
+        <li><span class="ico">✓</span><span data-i18n="home.why3">Monthly JLPT-style mock tests with one-to-one feedback</span></li>
+        <li><span class="ico">✓</span><span data-i18n="home.why4">Dedicated coaching for embassy and school interviews before you travel</span></li>
+        <li><span class="ico">✓</span><span data-i18n="home.why5">Small live batches — morning, day, and evening slots for students and job holders alike</span></li>
+      </ul>
+    </div>
+    <div class="grid" style="margin-top:20px">
+      <div class="card">
+        <img class="hero-img" src="school-photo.jpg" alt="SkillNest classroom" />
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;justify-content:center">
+        <h3 data-i18n="home.batchTitle">Current Batches</h3>
+        <p class="notice" data-i18n="home.batchText">New batches are forming now. Seats are limited to keep classes small — apply early to reserve yours.</p>
+        <button class="btn primary" onclick="document.querySelector('.tab[data-tab=\'admission\']').click()" data-i18n="btn.apply" style="margin-top:8px">Apply Now</button>
+      </div>
+    </div>
+    <div class="card" style="margin-top:20px">
+      <h3 data-i18n="batch.title">Open Batches Right Now</h3>
+      <div class="batch-grid">
+        <div class="batch-card">
+          <span class="seatBadge" data-i18n="batch.seats">20 Seats</span>
+          <h4>N5</h4>
+          <p data-i18n="batch.n5.desc">Perfect starting point — build reading, writing, and basic conversation from zero, over 4 months.</p>
+        </div>
+        <div class="batch-card">
+          <span class="seatBadge" data-i18n="batch.seats">20 Seats</span>
+          <h4>N4</h4>
+          <p data-i18n="batch.n4.desc">The next step after N5 — deeper grammar and vocabulary, aimed squarely at the N4 JLPT exam.</p>
+        </div>
+        <div class="batch-card">
+          <span class="seatBadge" data-i18n="batch.seats">20 Seats</span>
+          <h4 data-i18n="course.conversation">Conversation Course</h4>
+          <p data-i18n="batch.conv.desc">Focused purely on speaking confidence — for students who already know some Japanese and want fluency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="grid">
+      <div class="card">
+        <h2 data-i18n="about.title">About SkillNest</h2>
+        <p data-i18n="about.text1">SkillNest started with a simple observation: many talented students in Bangladesh want to study or work in Japan, but struggle to find Japanese language training that is both structured and taught in a language they're comfortable in. We built our program to close exactly that gap.</p>
+        <p data-i18n="about.text2">Our classes follow Minna no Nihongo, the textbook most widely used in Japanese language schools, so what you learn here lines up with what you'll be expected to know once you arrive in Japan. Every lesson is explained in Bangla first, then reinforced in Japanese — grammar, vocabulary, and JLPT-style practice questions included.</p>
+        <ul>
+          <li data-i18n="about.point1">Experienced, bilingual teachers with small batch sizes</li>
+          <li data-i18n="about.point2">JLPT-style mock tests every month, with detailed feedback</li>
+          <li data-i18n="about.point3">Dedicated embassy &amp; school interview coaching before departure</li>
+          <li data-i18n="about.point4">All classes conducted live online — no commute, no missed lessons</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 data-i18n="about.principalTitle">A Note From Our Lead Instructor</h3>
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-top:10px">
+          <img class="instructor-img" src="instructor.jpg" alt="Lead Instructor" onerror="this.style.display='none'">
+          <p style="margin:0" data-i18n="about.principalMsg">Every year I meet students who are capable of far more than they believe — they just need the right structure and someone explaining things in a language that actually makes sense to them. That's what we try to be at SkillNest: not just a language course, but a steady hand from your first Japanese word to your interview day.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h3 data-i18n="track.title">Our Track Record</h3>
+      <div class="kpis">
+        <div class="kpi"><div class="num">2020</div><div class="lbl" data-i18n="track.since">Founded</div></div>
+        <div class="kpi"><div class="num">500+</div><div class="lbl" data-i18n="track.students">Students Trained</div></div>
+        <div class="kpi"><div class="num">85%</div><div class="lbl" data-i18n="track.passrate">N5/N4 Pass Rate</div></div>
+        <div class="kpi"><div class="num">300+</div><div class="lbl" data-i18n="track.inJapan">Now Studying/Working in Japan</div></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h3 data-i18n="whybd.title">Why Bangladeshi Students Choose SkillNest</h3>
+      <ul class="why-list">
+        <li><span class="ico">✓</span><span data-i18n="whybd.p1">Everything is explained in Bangla first — you're never lost because of an English or Japanese word you don't know yet</span></li>
+        <li><span class="ico">✓</span><span data-i18n="whybd.p2">Curriculum matches Minna no Nihongo, the same textbook used in language schools in Japan — no relearning once you arrive</span></li>
+        <li><span class="ico">✓</span><span data-i18n="whybd.p3">Dedicated embassy &amp; school interview coaching built specifically around what Bangladeshi applicants are asked</span></li>
+        <li><span class="ico">✓</span><span data-i18n="whybd.p4">An informal alumni network of former students already living and studying in Japan who help newcomers settle in</span></li>
+        <li><span class="ico">✓</span><span data-i18n="whybd.p5">Regular progress updates sent to guardians, so parents stay informed without having to ask</span></li>
+        <li><span class="ico">✓</span><span data-i18n="whybd.p7">Fee payment in installments — no need to pay the full course fee up front</span></li>
+        <li><span class="ico">✓</span><span data-i18n="whybd.p8">Fully online classes — students from any district can join, not just Dhaka</span></li>
+        <li><span class="ico">✓</span><span data-i18n="whybd.p9">Small batch sizes so every student gets real speaking practice and personal attention</span></li>
+        <li><span class="ico">✓</span><span data-i18n="whybd.p10">A certificate of completion for every course, useful for your application file</span></li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h3 data-i18n="testi.title">What Our Students Say</h3>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <p data-i18n="testi.1.quote">"I couldn't follow English-medium Japanese classes at all. Here, every grammar point was explained in Bangla first, and things finally clicked."</p>
+          <div class="who" data-i18n="testi.1.who">— Former N5 &amp; N4 student</div>
+        </div>
+        <div class="testi-card">
+          <p data-i18n="testi.2.quote">"The mock embassy interview sessions made the real one feel easy. I knew exactly what to expect."</p>
+          <div class="who" data-i18n="testi.2.who">— Former Embassy Interview Prep student</div>
+        </div>
+        <div class="testi-card">
+          <p data-i18n="testi.3.quote">"My parents liked that they got updates about my progress directly. It made the online classes feel just as trustworthy as an in-person school."</p>
+          <div class="who" data-i18n="testi.3.who">— Guardian of a Conversation Course student</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section id="courses">
+    <div class="card">
+      <h2 data-i18n="courses.title">Courses &amp; Fees</h2>
+      <p class="notice" data-i18n="courses.note">* All courses are conducted fully online.</p>
+      <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-i18n="courses.col.course">Course</th>
+            <th data-i18n="courses.col.duration">Duration</th>
+            <th data-i18n="courses.col.shift">Shift</th>
+            <th data-i18n="courses.col.total">Total Fee (BDT)</th>
+            <th data-i18n="courses.col.monthly">Monthly Fee (BDT)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>N5</td><td>4 <span data-i18n="unit.months">months</span></td><td data-i18n="shift.all">Morning, Day, Evening</td><td>15,000</td><td>3,750</td></tr>
+          <tr><td>N4</td><td>4 <span data-i18n="unit.months">months</span></td><td data-i18n="shift.all">Morning, Day, Evening</td><td>18,000</td><td>4,500</td></tr>
+          <tr><td>N3</td><td>4 <span data-i18n="unit.months">months</span></td><td data-i18n="shift.all">Morning, Day, Evening</td><td>24,000</td><td>6,000</td></tr>
+          <tr><td data-i18n="course.conversation">Conversation Course</td><td>2 <span data-i18n="unit.months">months</span></td><td data-i18n="shift.all">Morning, Day, Evening</td><td>12,000</td><td>6,000</td></tr>
+          <tr><td data-i18n="course.embassyInterview">Embassy Interview Preparation</td><td>1 <span data-i18n="unit.month">month</span></td><td data-i18n="shift.all">Morning, Day, Evening</td><td>8,000</td><td>8,000</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="notice" style="margin-top:10px" data-i18n="courses.onlineNote">All classes are held live online via Zoom/Google Meet — Class recordings are also provided after the class.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="card">
+      <h2 data-i18n="services.title">Additional Services</h2>
+      <p class="notice" data-i18n="services.note">* All services are provided online.</p>
+      <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-i18n="services.col1">Service</th>
+            <th data-i18n="services.col2">Details</th>
+            <th data-i18n="services.col3">Cost (BDT)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td data-i18n="services.row1.s">Mock Interview Session</td><td data-i18n="services.row1.d">One-on-one embassy/school interview practice</td><td>6,000</td></tr>
+          <tr><td data-i18n="services.row2.s">Study Materials</td><td data-i18n="services.row2.d">Printed books &amp; practice sheets</td><td>1,500</td></tr>
+          <tr><td data-i18n="services.row3.s">Document Consultation</td><td data-i18n="services.row3.d">Visa &amp; application document check</td><td>1000</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="card">
+      <h2 data-i18n="gallery.title">Gallery</h2>
+      <p class="notice" data-i18n="gallery.note">Real photos from our classes and teaching sessions.</p>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="gallery1.jpg" alt="Teaching session photo 1" onerror="this.parentElement.style.display='none'">
+          <div class="cap" data-i18n="gallery.cap1">N5 Batch — live online class</div>
+        </div>
+        <div class="gallery-card">
+          <img src="gallery2.jpg" alt="Teaching session photo 2" onerror="this.parentElement.style.display='none'">
+          <div class="cap" data-i18n="gallery.cap2">Mock JLPT test session</div>
+        </div>
+        <div class="gallery-card">
+          <img src="gallery3.jpg" alt="Teaching session photo 3" onerror="this.parentElement.style.display='none'">
+          <div class="cap" data-i18n="gallery.cap3">Embassy interview coaching</div>
+        </div>
+        <div class="gallery-card">
+          <img src="gallery4.jpg" alt="Teaching session photo 4" onerror="this.parentElement.style.display='none'">
+          <div class="cap" data-i18n="gallery.cap4">Student study materials</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h2 data-i18n="gallery.videoTitle">Our Teaching Videos</h2>
+      <p class="notice" data-i18n="gallery.videoNote">Watch sample classes and student updates right here on the site.</p>
+      <div class="video-grid" id="videoGrid"></div>
+    </div>
+  </section>
+
+  <!-- ADMISSION -->
+  <section id="admission">
+    <div class="grid">
+      <div class="card">
+        <h2 data-i18n="admission.title">Admission Form</h2>
+        <form id="admissionForm" novalidate>
+          <div class="row">
+            <div>
+              <label for="studentName" data-i18n="form.studentName">Student Name</label>
+              <input id="studentName" name="studentName" required />
+              <div class="err" data-err-for="studentName"></div>
+            </div>
+            <div>
+              <label for="email" data-i18n="form.email">Email</label>
+              <input id="email" type="email" name="email" required />
+              <div class="err" data-err-for="email"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="studentPhone" data-i18n="form.studentPhone">Student Phone</label>
+              <input id="studentPhone" name="studentPhone" placeholder="01XXXXXXXXX" pattern="^(?:\+?88)?01[3-9]\d{8}$" required />
+              <div class="err" data-err-for="studentPhone"></div>
+            </div>
+            <div>
+              <label for="guardianPhone" data-i18n="form.guardianPhone">Guardian Phone</label>
+              <input id="guardianPhone" name="guardianPhone" placeholder="01XXXXXXXXX" pattern="^(?:\+?88)?01[3-9]\d{8}$" required />
+              <div class="err" data-err-for="guardianPhone"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="guardianName" data-i18n="form.guardianName">Guardian Name</label>
+              <input id="guardianName" name="guardianName" required />
+              <div class="err" data-err-for="guardianName"></div>
+            </div>
+            <div>
+              <label for="applyCourse" data-i18n="form.course">Course</label>
+              <select id="applyCourse" name="course">
+                <option value="N5">N5</option>
+                <option value="N4">N4</option>
+                <option value="N3">N3</option>
+                <option value="CONV" data-i18n="course.conversation">Conversation Course</option>
+                <option value="SCHOOL_INT" data-i18n="course.schoolInterview">School Interview Preparation</option>
+                <option value="EMB_INT" data-i18n="course.embassyInterview">Embassy Interview Preparation</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="message" data-i18n="form.message">Message (optional)</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+          </div>
+          <button class="btn primary" type="submit" id="submitBtn" data-i18n="form.submit">Submit Application</button>
+          <div class="status" id="formStatus"></div>
+          <p class="notice" data-i18n="form.notice">After you submit, we'll contact you about payment and next steps — no online payment needed right now.</p>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2 data-i18n="next.title">What Happens After You Apply?</h2>
+        <ul class="why-list">
+          <li><span class="ico">1</span><span data-i18n="next.step1">We review your application within one business day.</span></li>
+          <li><span class="ico">2</span><span data-i18n="next.step2">Our team calls you on the phone number you provided, usually within 24–48 hours.</span></li>
+          <li><span class="ico">3</span><span data-i18n="next.step3">We confirm your course, batch timing, fees, and payment method (bKash/Nagad/bank/cash) on that call.</span></li>
+          <li><span class="ico">4</span><span data-i18n="next.step4">Your seat is reserved once payment is completed as guided by our team.</span></li>
+        </ul>
+        <p class="notice" style="margin-top:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <span data-i18n="next.noteText">Prefer not to wait?</span>
+          <button type="button" class="btn" style="padding:6px 14px;font-size:13px" onclick="document.querySelector('.tab[data-tab=\'contact\']').click()" data-i18n="next.contactBtn">Contact Us</button>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="grid">
+      <div class="card">
+        <h2 data-i18n="contact.title">Contact Us</h2>
+        <p><strong data-i18n="contact.addr.label">Address:</strong> <span id="schoolAddress">Kalatiya Bazaar, Keraniganj Model, Dhaka 1313</span></p>
+        <div class="contact-links">
+          <a class="contact-link" href="tel:+8801892037793"><span class="cico">📞</span> <span data-i18n="contact.callLabel">Call: +880 1892-037793</span></a>
+          <a class="contact-link" href="https://wa.me/8801892037793" target="_blank" rel="noopener"><span class="cico">💬</span> <span data-i18n="contact.waLabel">WhatsApp: +880 1892-037793</span></a>
+          <a class="contact-link" href="mailto:jlanguagecenter@gmail.com"><span class="cico">✉️</span> <span data-i18n="contact.mailLabel">Email: jlanguagecenter@gmail.com</span></a>
+        </div>
+        <iframe id="map" title="Google Map" width="100%" height="260" style="border:0;border-radius:14px;margin-top:14px" allowfullscreen loading="lazy"
+          src="https://www.google.com/maps?q=Kalatiya%20Bazaar,%20Keraniganj%20Model,%20Dhaka%201313&output=embed"></iframe>
+      </div>
+      <div class="card">
+        <h2 data-i18n="contact.social">Facebook</h2>
+        <p class="notice" data-i18n="contact.fbNote">Our latest posts, shown live from our Facebook Page.</p>
+        <div class="fb-page"
+          data-href="https://www.facebook.com/skillnestJLS"
+          data-tabs="timeline" data-width="500" data-height="500"
+          data-small-header="true" data-adapt-container-width="true"
+          data-hide-cover="false" data-show-facepile="false">
+          <blockquote cite="https://www.facebook.com/skillnestJLS" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/skillnestJLS" target="_blank" rel="noopener" data-i18n="contact.fbBtn">Visit our Facebook Page</a>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">© <span id="year"></span> <span data-i18n="brand">SkillNest</span>. <span data-i18n="footer">All rights reserved.</span></div>
+</footer>
+
+<script>
+/* ======================================================================
+   SETTINGS — edit these before you publish. This is the only block
+   you should need to touch for day-to-day updates.
+   ====================================================================== */
+const SETTINGS = {
+  // Formspree: create a free account at https://formspree.io , make a form,
+  // copy its endpoint (looks like https://formspree.io/f/xxxxaaaa) and paste below.
+  formspreeEndpoint: "https://formspree.io/f/mgognzyg",
+
+  // YouTube videos shown in the Gallery tab. Add as many as you want —
+  // just add another quoted ID, separated by a comma.
+  // How to get the ID: open your video on YouTube, look at the URL:
+  //   https://www.youtube.com/watch?v=XXXXXXXXXXX  <- the part after "v=" is the ID
+  youtubeVideos: [
+    "M7lc1UVf-VE",   // <- demo video, replace with your own ID
+    // "ANOTHER_VIDEO_ID",
+    // "ANOTHER_VIDEO_ID",
+  ],
+};
+
+/* ---------------- News ticker — edit here, in all 3 languages ----------------
+   Add or remove lines freely. Keep the same NUMBER of lines in each language
+   so they line up, but the wording can be completely different per language. */
+const NEWS_ITEMS = {
+  bn: [
+    "এন৫ ও এন৪ ভর্তি চলছে",
+    "নতুন কনভারসেশন কোর্স আগামী মাসে",
+    "এম্ব্যাসি ইন্টারভিউ প্রস্তুতি ব্যাচ খোলা"
+  ],
+  en: [
+    "Admissions open for N5 & N4",
+    "New Conversation Course starts next month",
+    "Embassy Interview Prep batches available"
+  ],
+  ja: [
+    "N5・N4 入学受付中",
+    "会話コース来月開講",
+    "大使館面接対策コース受付中"
+  ]
+};
+
+/* ---------------- Tabs + mobile menu ---------------- */
+const tabs = document.querySelectorAll('.tab');
+const sections = document.querySelectorAll('main section');
+const tabsNav = document.getElementById('tabsNav');
+const menuBtn = document.getElementById('menuBtn');
+
+tabs.forEach(btn => btn.addEventListener('click', () => {
+  tabs.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  sections.forEach(s => s.classList.remove('active'));
+  document.getElementById(btn.dataset.tab).classList.add('active');
+  tabsNav.classList.remove('open');
+  window.scrollTo({top:0, behavior:'smooth'});
+}));
+
+menuBtn.addEventListener('click', () => tabsNav.classList.toggle('open'));
+
+document.getElementById('applyBtn').addEventListener('click', () => {
+  document.querySelector('.tab[data-tab="admission"]').click();
+  document.getElementById('studentName').focus();
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------------- Render YouTube videos into the Gallery tab ---------------- */
+function renderVideos(){
+  const wrap = document.getElementById('videoGrid');
+  if(!wrap) return;
+  wrap.innerHTML = '';
+  SETTINGS.youtubeVideos.forEach(id => {
+    const div = document.createElement('div');
+    div.className = 'video-card';
+    div.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}" title="YouTube video" allowfullscreen loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>`;
+    wrap.appendChild(div);
+  });
+}
+renderVideos();
+
+/* ---------------- Render the scrolling news bar in the current language ---------------- */
+function renderTicker(lang){
+  const track = document.getElementById('newsTicker');
+  if(!track) return;
+  const items = NEWS_ITEMS[lang] || NEWS_ITEMS.en;
+  // duplicate the list so the CSS scroll animation loops seamlessly
+  track.innerHTML = items.concat(items).map(txt => `<span>${txt}</span>`).join('');
+}
+
+/* ---------------- Address -> map auto-update ---------------- */
+const addrEl = document.getElementById('schoolAddress');
+const mapEl = document.getElementById('map');
+function updateMap(){
+  const q = encodeURIComponent(addrEl.textContent.trim());
+  mapEl.src = `https://www.google.com/maps?q=${q}&output=embed`;
+}
+new MutationObserver(updateMap).observe(addrEl, {characterData:true, subtree:true, childList:true});
+
+/* ---------------- Admission form: real validation + real submit ---------------- */
+const form = document.getElementById('admissionForm');
+const submitBtn = document.getElementById('submitBtn');
+const statusBox = document.getElementById('formStatus');
+const phonePattern = /^(?:\+?88)?01[3-9]\d{8}$/;
+
+function setError(name, msg){
+  const el = form.querySelector(`[data-err-for="${name}"]`);
+  const input = form.querySelector(`[name="${name}"]`);
+  if(el) el.textContent = msg || '';
+  if(input) input.classList.toggle('invalid', !!msg);
+}
+
+function validate(data){
+  let ok = true;
+  if(!data.studentName.trim()){ setError('studentName', t('err.required')); ok = false; } else setError('studentName','');
+  if(!/^\S+@\S+\.\S+$/.test(data.email)){ setError('email', t('err.email')); ok = false; } else setError('email','');
+  if(!phonePattern.test(data.studentPhone)){ setError('studentPhone', t('err.phone')); ok = false; } else setError('studentPhone','');
+  if(!phonePattern.test(data.guardianPhone)){ setError('guardianPhone', t('err.phone')); ok = false; } else setError('guardianPhone','');
+  if(!data.guardianName.trim()){ setError('guardianName', t('err.required')); ok = false; } else setError('guardianName','');
+  return ok;
+}
+
+form.addEventListener('submit', async function(e){
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form).entries());
+  if(!validate(data)) return;
+
+  submitBtn.disabled = true;
+  statusBox.className = 'status';
+  statusBox.textContent = '';
+
+  try{
+    if(SETTINGS.formspreeEndpoint.includes('YOUR_FORM_ID')){
+      // No real endpoint configured yet — still let the demo flow work locally.
+      console.warn('Formspree endpoint not set. See SETTINGS at top of <script>.');
+      statusBox.className = 'status ok';
+      statusBox.textContent = t('form.demoNotice');
+    } else {
+      const res = await fetch(SETTINGS.formspreeEndpoint, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      if(res.ok){
+        statusBox.className = 'status ok';
+        statusBox.textContent = t('form.afterSubmit');
+      } else {
+        statusBox.className = 'status bad';
+        statusBox.textContent = t('form.error');
+        submitBtn.disabled = false;
+        return;
+      }
+    }
+    form.reset();
+  } catch(err){
+    statusBox.className = 'status bad';
+    statusBox.textContent = t('form.error');
+  } finally {
+    submitBtn.disabled = false;
+  }
+});
+
+/* ---------------- i18n (bn / en / ja) ---------------- */
+const dict = {
+  en:{
+    brand:"SkillNest", tagline:"Japanese Language school",
+    'nav.home':"Home",'nav.about':"About",'nav.courses':"Courses & Fees",'nav.services':"Services",'nav.gallery':"Gallery",'nav.admission':"Admission",'nav.contact':"Contact",
+    'btn.apply':"Apply Now",
+    'home.eyebrow':"Bangla-medium Japanese Language Institute",
+    'home.title':"Learn Japanese. Open the Door to Japan.",
+    'home.subtitle':"Structured, exam-focused Japanese classes — from N5 to N3, conversation, and interview preparation — taught live online, in Bangla, by experienced teachers.",
+    'home.kpi1':"Student–Teacher Ratio",'home.kpi2':"Months per Core Course",'home.kpi3':"All Classes Live via Zoom/Meet",'home.kpi3num':"100% Online",
+    'home.why1':"Curriculum built around Minna no Nihongo, the textbook used at most language schools in Japan",
+    'home.why2':"Bilingual (Bangla–Japanese) teachers who explain grammar the way Bangladeshi students actually understand it",
+    'home.why3':"Monthly JLPT-style mock tests with one-to-one feedback",
+    'home.why4':"Dedicated coaching for embassy and school interviews before you travel",
+    'home.why5':"Small live batches — morning, day, and evening slots for students and job holders alike",
+    'home.batchTitle':"Current Batches",'home.batchText':"New batches are forming now. Seats are limited to keep classes small — apply early to reserve yours.",
+    'batch.title':"Open Batches Right Now",'batch.seats':"20 Seats",
+    'batch.n5.desc':"Perfect starting point — build reading, writing, and basic conversation from zero, over 4 months.",
+    'batch.n4.desc':"The next step after N5 — deeper grammar and vocabulary, aimed squarely at the N4 JLPT exam.",
+    'batch.conv.desc':"Focused purely on speaking confidence — for students who already know some Japanese and want fluency.",
+    'news.label':"📢 NEWS",
+    'news.1':"Admissions open for N5 & N4",'news.2':"New Conversation Course starts next month",'news.3':"Embassy Interview Prep batches available",
+    'about.title':"About SkillNest",
+    'about.text1':"SkillNest started with a simple observation: many talented students in Bangladesh want to study or work in Japan, but struggle to find Japanese language training that is both structured and taught in a language they're comfortable in. We built our program to close exactly that gap.",
+    'about.text2':"Our classes follow Minna no Nihongo, the textbook most widely used in Japanese language schools, so what you learn here lines up with what you'll be expected to know once you arrive in Japan. Every lesson is explained in Bangla first, then reinforced in Japanese — grammar, vocabulary, and JLPT-style practice questions included.",
+    'about.point1':"Experienced, bilingual teachers with small batch sizes",'about.point2':"JLPT-style mock tests every month, with detailed feedback",'about.point3':"Dedicated embassy & school interview coaching before departure",'about.point4':"All classes conducted live online — no commute, no missed lessons",
+    'about.principalTitle':"A Note From Our Lead Instructor",'about.principalMsg':"Every year I meet students who are capable of far more than they believe — they just need the right structure and someone explaining things in a language that actually makes sense to them. That's what we try to be at SkillNest BD: not just a language course, but a steady hand from your first Japanese word to your interview day.",
+    'track.title':"Our Track Record",'track.note':"* Sample numbers — replace with your real track record once you have it.",
+    'track.since':"Founded",'track.students':"Students Trained",'track.passrate':"N5/N4 Pass Rate",'track.inJapan':"Now Studying/Working in Japan",
+    'whybd.title':"Why Bangladeshi Students Choose SkillNest",
+    'whybd.p1':"Everything is explained in Bangla first — you're never lost because of an English or Japanese word you don't know yet",
+    'whybd.p2':"Curriculum matches Minna no Nihongo, the same textbook used in language schools in Japan — no relearning once you arrive",
+    'whybd.p3':"Dedicated embassy & school interview coaching built specifically around what Bangladeshi applicants are asked",
+    'whybd.p4':"An informal alumni network of former students already living and studying in Japan who help newcomers settle in",
+    'whybd.p5':"Regular progress updates sent to guardians, so parents stay informed without having to ask",
+    'whybd.p6':"Optional girls-only batch for students and families who prefer it",
+    'whybd.p7':"Fee payment in installments — no need to pay the full course fee up front",
+    'whybd.p8':"Fully online classes — students from any district can join, not just Dhaka",
+    'whybd.p9':"Small batch sizes so every student gets real speaking practice and personal attention",
+    'whybd.p10':"A certificate of completion for every course, useful for your application file",
+    'testi.title':"What Our Students Say",'testi.note':"* Sample testimonials — replace with quotes from your real students.",
+    'testi.1.quote':"\"I couldn't follow English-medium Japanese classes at all. Here, every grammar point was explained in Bangla first, and things finally clicked.\"",
+    'testi.1.who':"— Former N5 & N4 student",
+    'testi.2.quote':"\"The mock embassy interview sessions made the real one feel easy. I knew exactly what to expect.\"",
+    'testi.2.who':"— Former Embassy Interview Prep student",
+    'testi.3.quote':"\"My parents liked that they got updates about my progress directly. It made the online classes feel just as trustworthy as an in-person school.\"",
+    'testi.3.who':"— Guardian of a Conversation Course student",
+    'courses.title':"Courses & Fees",'courses.note':"* All courses are conducted fully online.",
+    'courses.col.course':"Course",'courses.col.duration':"Duration",'courses.col.shift':"Shift",'courses.col.total':"Total Fee (BDT)",'courses.col.monthly':"Monthly Fee (BDT)",
+    'courses.onlineNote':"All classes are held live online via Zoom/Google Meet — Class recordings are also provided after the class.",
+    'unit.months':"months",'unit.month':"month",
+    'shift.morning':"Morning",'shift.day':"Day",'shift.evening':"Evening",'shift.all':"Morning, Day, Evening",
+    'course.conversation':"Conversation Course",'course.schoolInterview':"School Interview Preparation",'course.embassyInterview':"Embassy Interview Preparation",
+    'services.title':"Additional Services",'services.note':"* All services are provided online.",
+    'services.col1':"Service",'services.col2':"Details",'services.col3':"Cost (BDT)",
+    'services.row1.s':"Mock Interview Session",'services.row1.d':"One-on-one embassy/school interview practice",
+    'services.row2.s':"Study Materials",'services.row2.d':"Printed books & practice sheets",
+    'services.row3.s':"Document Consultation",'services.row3.d':"Visa & application document check",
+    'gallery.title':"Gallery",'gallery.note':"Real photos from our classes and teaching sessions.",
+    'gallery.cap1':"N5 Batch — live online class",'gallery.cap2':"Mock JLPT test session",
+    'gallery.cap3':"Embassy interview coaching",'gallery.cap4':"Student study materials",
+    'gallery.videoTitle':"Our Teaching Videos",'gallery.videoNote':"Watch sample classes and student updates right here on the site.",
+    'admission.title':"Admission Form",
+    'form.studentName':"Student Name",'form.email':"Email",'form.studentPhone':"Student Phone",'form.guardianName':"Guardian Name",'form.guardianPhone':"Guardian Phone",
+    'form.course':"Course",'form.message':"Message (optional)",'form.submit':"Submit Application",
+    'form.afterSubmit':"Application received! We'll call you soon to confirm payment and next steps.",'form.demoNotice':"Demo mode: form validated locally. Connect Formspree to receive real submissions.",
+    'form.error':"Something went wrong. Please try again or contact us directly.",
+    'form.notice':"After you submit, we'll contact you about payment and next steps — no online payment needed right now.",
+    'err.required':"This field is required.",'err.email':"Enter a valid email address.",'err.phone':"Enter a valid Bangladeshi phone number (e.g. 01XXXXXXXXX).",
+    'next.title':"What Happens After You Apply?",
+    'next.step1':"We review your application within one business day.",
+    'next.step2':"Our team calls you on the phone number you provided, usually within 24–48 hours.",
+    'next.step3':"We confirm your course, batch timing, fees, and payment method (bKash/Nagad/bank/cash) on that call.",
+    'next.step4':"Your seat is reserved once payment is completed as guided by our team.",
+    'next.noteText':"Prefer not to wait?",'next.contactBtn':"Contact Us",
+    'contact.title':"Contact Us",'contact.addr.label':"Address:",'contact.phone.label':"Phone:",'contact.email.label':"Email:",
+    'contact.social':"Facebook",'contact.fbBtn':"Visit our Facebook Page",
+    'contact.callLabel':"Call: +880 1892-037793",'contact.waLabel':"WhatsApp: +880 1892-037793",'contact.mailLabel':"Email: jlanguagecenter@gmail.com",
+    'contact.fbNote':"Our latest posts, shown live from our Facebook Page.",
+    'footer':"All rights reserved."
+  },
+  bn:{
+    brand:"স্কিলনেস্ট", tagline:"জাপানি ভাষার স্কুল",
+    'nav.home':"হোম",'nav.about':"আমাদের সম্পর্কে",'nav.courses':"কোর্স ও ফি",'nav.services':"সেবাসমূহ",'nav.gallery':"গ্যালারি",'nav.admission':"ভর্তি",'nav.contact':"যোগাযোগ",
+    'btn.apply':"এখনই আবেদন করুন",
+    'home.eyebrow':"বাংলা মাধ্যমে জাপানি ভাষা প্রশিক্ষণ প্রতিষ্ঠান",
+    'home.title':"জাপানি ভাষা শিখুন। জাপানে যাওয়ার পথ খুলুন।",
+    'home.subtitle':"অভিজ্ঞ শিক্ষকদের তত্ত্বাবধানে সম্পূর্ণ অনলাইনে, বাংলা মাধ্যমে N5 থেকে N3, কনভারসেশন ও ইন্টারভিউ প্রস্তুতিসহ পরীক্ষা-নির্ভর জাপানি ভাষা শিক্ষা।",
+    'home.kpi1':"শিক্ষার্থী–শিক্ষক অনুপাত",'home.kpi2':"প্রধান কোর্সের মেয়াদ (মাস)",'home.kpi3':"সব ক্লাস Zoom/Meet-এ লাইভ",'home.kpi3num':"১০০% অনলাইন",
+    'home.why1':"Minna no Nihongo বই অনুসরণে সাজানো কারিকুলাম — জাপানের বেশিরভাগ ভাষা স্কুলে ব্যবহৃত হয়",
+    'home.why2':"বাংলা-জাপানি দ্বিভাষিক শিক্ষক, যারা ব্যাকরণ এমনভাবে বোঝান যা বাংলাদেশি শিক্ষার্থীরা সহজে ধরতে পারে",
+    'home.why3':"প্রতি মাসে JLPT-স্টাইল মক টেস্ট, সাথে একক ফিডব্যাক",
+    'home.why4':"জাপান যাওয়ার আগে এম্ব্যাসি ও স্কুল ইন্টারভিউয়ের জন্য বিশেষ কোচিং",
+    'home.why5':"ছোট লাইভ ব্যাচ — শিক্ষার্থী ও চাকরিজীবীদের জন্য সকাল, দিন ও সন্ধ্যার স্লট",
+    'home.batchTitle':"চলতি ব্যাচসমূহ",'home.batchText':"নতুন ব্যাচ এখন গঠিত হচ্ছে। ক্লাস ছোট রাখতে আসন সীমিত — নিজের আসন নিশ্চিত করতে আগেভাগে আবেদন করুন।",
+    'batch.title':"এখন যে ব্যাচগুলো খোলা আছে",'batch.seats':"২০টি আসন",
+    'batch.n5.desc':"শুরু করার আদর্শ ধাপ — একদম শূন্য থেকে ৪ মাসে পড়া, লেখা ও প্রাথমিক কথোপকথন শেখা।",
+    'batch.n4.desc':"N5-এর পরের ধাপ — গভীর ব্যাকরণ ও শব্দভাণ্ডার, সরাসরি N4 JLPT পরীক্ষা লক্ষ্য করে।",
+    'batch.conv.desc':"শুধু কথা বলার আত্মবিশ্বাসের উপর ফোকাস — যারা আগে থেকে কিছুটা জাপানি জানেন এবং সাবলীলতা চান তাদের জন্য।",
+    'news.label':"📢 সংবাদ",
+    'news.1':"এন৫ ও এন৪ ভর্তি চলছে",'news.2':"নতুন কনভারসেশন কোর্স আগামী মাসে",'news.3':"এম্ব্যাসি ইন্টারভিউ প্রস্তুতি ব্যাচ খোলা",
+    'about.title':"স্কিলনেস্ট সম্পর্কে",
+    'about.text1':"স্কিলনেস্ট এর শুরু একটা সাধারণ পর্যবেক্ষণ থেকে — বাংলাদেশের অনেক মেধাবী শিক্ষার্থী জাপানে পড়তে বা কাজ করতে চান, কিন্তু এমন জাপানি ভাষা শিক্ষা খুঁজে পান না যা একইসাথে গোছানো এবং তাদের স্বাচ্ছন্দ্যের ভাষায় শেখানো হয়। ঠিক এই ফাঁকটা পূরণ করতেই আমাদের প্রোগ্রাম তৈরি।",
+    'about.text2':"আমাদের ক্লাস Minna no Nihongo বই অনুসরণ করে, যা জাপানের ভাষা স্কুলগুলোতে সবচেয়ে বেশি ব্যবহৃত হয় — তাই এখানে যা শিখবেন, জাপানে পৌঁছানোর পর তার সাথেই মিলবে। প্রতিটি পাঠ প্রথমে বাংলায় বোঝানো হয়, তারপর জাপানিতে অনুশীলন করানো হয় — ব্যাকরণ, শব্দভাণ্ডার ও JLPT-স্টাইল প্রশ্ন সহ।",
+    'about.point1':"অভিজ্ঞ, দ্বিভাষিক শিক্ষক ও ছোট ব্যাচ",'about.point2':"প্রতি মাসে JLPT-স্টাইল মক টেস্ট, বিস্তারিত ফিডব্যাকসহ",'about.point3':"যাওয়ার আগে এম্ব্যাসি ও স্কুল ইন্টারভিউ কোচিং",'about.point4':"সব ক্লাস লাইভ অনলাইনে — যাতায়াতের ঝামেলা নেই, ক্লাস মিস হয় না",
+    'about.principalTitle':"আমাদের প্রধান প্রশিক্ষকের একটি কথা",'about.principalMsg':"প্রতি বছর আমি এমন শিক্ষার্থী দেখি যারা নিজেদের ভাবনার চেয়ে অনেক বেশি সক্ষম — শুধু দরকার সঠিক কাঠামো আর এমন কেউ যে তাদের বোধগম্য ভাষায় বুঝিয়ে দেবে। স্কিলনেস্ট এ আমরা ঠিক সেটাই হতে চাই — শুধু একটা ভাষা কোর্স নয়, বরং জাপানি ভাষার প্রথম শব্দ থেকে ইন্টারভিউয়ের দিন পর্যন্ত একটা নির্ভরযোগ্য সহায়তা।",
+    'track.title':"আমাদের অর্জন",'track.note':"* নিচের সংখ্যা নমুনা — নিজের প্রকৃত তথ্য দিয়ে পরিবর্তন করুন।",
+    'track.since':"প্রতিষ্ঠিত",'track.students':"প্রশিক্ষিত শিক্ষার্থী",'track.passrate':"N5/N4 পাসের হার",'track.inJapan':"বর্তমানে জাপানে অধ্যয়নরত/কর্মরত",
+    'whybd.title':"কেন বাংলাদেশি শিক্ষার্থীরা স্কিলনেস্ট বেছে নেয়",
+    'whybd.p1':"সবকিছু আগে বাংলায় বোঝানো হয় — ইংরেজি বা জাপানি শব্দ না জানার কারণে কখনো আটকে থাকতে হয় না",
+    'whybd.p2':"কারিকুলাম Minna no Nihongo বইয়ের সাথে মিলে যায় — জাপানের ভাষা স্কুলে একই বই পড়ানো হয়, তাই নতুন করে শেখার দরকার হয় না",
+    'whybd.p3':"বাংলাদেশি আবেদনকারীদের যা জিজ্ঞাসা করা হয় তার উপর ভিত্তি করে বিশেষ এম্ব্যাসি ও স্কুল ইন্টারভিউ কোচিং",
+    'whybd.p4':"জাপানে বসবাসরত ও পড়াশোনারত প্রাক্তন শিক্ষার্থীদের একটা অনানুষ্ঠানিক নেটওয়ার্ক, যারা নতুনদের মানিয়ে নিতে সাহায্য করে",
+    'whybd.p5':"অভিভাবকদের কাছে নিয়মিত অগ্রগতির আপডেট পাঠানো হয়, যাতে না জিজ্ঞেস করেও তারা খবর পান",
+    'whybd.p6':"যারা চান তাদের জন্য শুধু মেয়েদের আলাদা ব্যাচের সুযোগ",
+    'whybd.p7':"কিস্তিতে ফি পরিশোধের সুযোগ — পুরো কোর্স ফি একসাথে দিতে হয় না",
+    'whybd.p8':"সম্পূর্ণ অনলাইন ক্লাস — শুধু ঢাকা নয়, যেকোনো জেলার শিক্ষার্থীরাই যোগ দিতে পারবে",
+    'whybd.p9':"ছোট ব্যাচ সাইজ, তাই প্রতিটি শিক্ষার্থী সত্যিকারের স্পিকিং প্র্যাকটিস ও ব্যক্তিগত মনোযোগ পায়",
+    'whybd.p10':"প্রতিটি কোর্স শেষে সার্টিফিকেট, যা আপনার আবেদন ফাইলের জন্য কাজে লাগবে",
+    'testi.title':"শিক্ষার্থীরা যা বলছে",'testi.note':"* নমুনা মতামত — আপনার প্রকৃত শিক্ষার্থীদের মতামত দিয়ে পরিবর্তন করুন।",
+    'testi.1.quote':"\"ইংরেজি মাধ্যমে জাপানি ক্লাস একদমই বুঝতাম না। এখানে প্রতিটা গ্রামার প্রথমে বাংলায় বোঝানো হয়েছে, তাই সব পরিষ্কার হয়ে গেছে।\"",
+    'testi.1.who':"— সাবেক N5 ও N4 শিক্ষার্থী",
+    'testi.2.quote':"\"মক এম্ব্যাসি ইন্টারভিউ সেশনগুলোর কারণে আসল ইন্টারভিউটা সহজ মনে হয়েছে। কী জিজ্ঞেস করা হবে সেটা আগে থেকেই জানতাম।\"",
+    'testi.2.who':"— সাবেক এম্ব্যাসি ইন্টারভিউ প্রস্তুতি শিক্ষার্থী",
+    'testi.3.quote':"\"সরাসরি আমার সন্তানের অগ্রগতির আপডেট পেয়ে ভালো লেগেছে। অনলাইন ক্লাসকেও তখন সরাসরি স্কুলের মতোই বিশ্বাসযোগ্য মনে হয়েছে।\"",
+    'testi.3.who':"— কনভারসেশন কোর্স শিক্ষার্থীর অভিভাবক",
+    'courses.title':"কোর্স ও ফি",'courses.note':"* সব কোর্স সম্পূর্ণ অনলাইনে পরিচালিত হয়।",
+    'courses.col.course':"কোর্স",'courses.col.duration':"মেয়াদ",'courses.col.shift':"শিফট",'courses.col.total':"মোট ফি (টাকা)",'courses.col.monthly':"মাসিক ফি (টাকা)",
+    'courses.onlineNote':"সব ক্লাস Zoom/Google Meet-এ লাইভ পরিচালিত হয় — ক্লাসের পরে ক্লাসের রেকর্ডিংও প্রদান করা হয়।",
+    'unit.months':"মাস",'unit.month':"মাস",
+    'shift.morning':"সকাল",'shift.day':"ডে",'shift.evening':"সন্ধ্যা",'shift.all':"সকাল, দিন, সন্ধ্যা",
+    'course.conversation':"কনভারসেশন কোর্স",'course.schoolInterview':"স্কুল ইন্টারভিউ প্রস্তুতি",'course.embassyInterview':"এম্ব্যাসি ইন্টারভিউ প্রস্তুতি",
+    'services.title':"অতিরিক্ত সেবাসমূহ",'services.note':"* সব সেবা অনলাইনে প্রদান করা হয়।",
+    'services.col1':"সেবা",'services.col2':"বিবরণ",'services.col3':"খরচ (টাকা)",
+    'services.row1.s':"মক ইন্টারভিউ সেশন",'services.row1.d':"এম্ব্যাসি/স্কুল ইন্টারভিউ একক অনুশীলন",
+    'services.row2.s':"স্টাডি ম্যাটেরিয়াল",'services.row2.d':"প্রিন্টেড বই ও অনুশীলন শীট",
+    'services.row3.s':"ডকুমেন্ট কনসালটেশন",'services.row3.d':"ভিসা ও আবেদন কাগজপত্র যাচাই",
+    'gallery.title':"গ্যালারি",'gallery.note':"আমাদের ক্লাস ও পাঠদানের বাস্তব ছবি।",
+    'gallery.cap1':"N5 ব্যাচ — লাইভ অনলাইন ক্লাস",'gallery.cap2':"মক JLPT টেস্ট সেশন",
+    'gallery.cap3':"এম্ব্যাসি ইন্টারভিউ কোচিং",'gallery.cap4':"শিক্ষার্থীদের স্টাডি ম্যাটেরিয়াল",
+    'gallery.videoTitle':"আমাদের পাঠদানের ভিডিও",'gallery.videoNote':"এই ওয়েবসাইটেই sample ক্লাস ও শিক্ষার্থীদের আপডেট দেখুন।",
+    'admission.title':"ভর্তির ফর্ম",
+    'form.studentName':"শিক্ষার্থীর নাম",'form.email':"ইমেইল",'form.studentPhone':"শিক্ষার্থীর ফোন",'form.guardianName':"অভিভাবকের নাম",'form.guardianPhone':"অভিভাবকের ফোন",
+    'form.course':"কোর্স",'form.message':"বার্তা (ঐচ্ছিক)",'form.submit':"আবেদন জমা দিন",
+    'form.afterSubmit':"আবেদন গৃহীত হয়েছে! পেমেন্ট ও পরবর্তী ধাপ নিশ্চিত করতে আমরা শীঘ্রই আপনাকে কল করব।",'form.demoNotice':"ডেমো মোড: ফর্ম লোকালি ভ্যালিডেট হয়েছে। প্রকৃত সাবমিশন পেতে Formspree কানেক্ট করুন।",
+    'form.error':"কিছু একটা সমস্যা হয়েছে। আবার চেষ্টা করুন অথবা সরাসরি যোগাযোগ করুন।",
+    'form.notice':"জমা দেওয়ার পর পেমেন্ট ও পরবর্তী ধাপের বিষয়ে আমরা যোগাযোগ করব — এখনই অনলাইন পেমেন্টের দরকার নেই।",
+    'err.required':"এই ঘরটি পূরণ করা আবশ্যক।",'err.email':"সঠিক ইমেইল ঠিকানা দিন।",'err.phone':"সঠিক বাংলাদেশি ফোন নম্বর দিন (যেমন 01XXXXXXXXX)।",
+    'next.title':"আবেদনের পর কী হবে?",
+    'next.step1':"এক কর্মদিবসের মধ্যে আমরা আপনার আবেদন পর্যালোচনা করব।",
+    'next.step2':"আপনার দেওয়া ফোন নম্বরে আমাদের টিম কল করবে, সাধারণত ২৪–৪৮ ঘণ্টার মধ্যে।",
+    'next.step3':"সেই কলেই আপনার কোর্স, ব্যাচের সময়, ফি এবং পেমেন্ট পদ্ধতি (বিকাশ/নগদ/ব্যাংক/ক্যাশ) নিশ্চিত করা হবে।",
+    'next.step4':"আমাদের টিমের নির্দেশনা অনুযায়ী পেমেন্ট সম্পন্ন হলেই আপনার আসন সংরক্ষিত হবে।",
+    'next.noteText':"অপেক্ষা করতে না চাইলে?",'next.contactBtn':"যোগাযোগ করুন",
+    'contact.title':"যোগাযোগ",'contact.addr.label':"ঠিকানা:",'contact.phone.label':"ফোন:",'contact.email.label':"ইমেইল:",
+    'contact.social':"ফেসবুক ও ইউটিউব",'contact.fbBtn':"আমাদের ফেসবুক পেজ দেখুন",
+    'contact.callLabel':"কল করুন: +৮৮০ ১৮৯২-০৩৭৭৯৩",'contact.waLabel':"হোয়াটসঅ্যাপ: +৮৮০ ১৮৯২-০৩৭৭৯৩",'contact.mailLabel':"ইমেইল: jlanguagecenter@gmail.com",
+    'contact.fbNote':"আমাদের ফেসবুক পেজের সাম্প্রতিক পোস্ট এখানে সরাসরি দেখানো হচ্ছে।",
+    'footer':"সর্বস্বত্ব সংরক্ষিত।"
+  },
+  ja:{
+    brand:"スキルネスト", tagline:"日本語学校",
+    'nav.home':"ホーム",'nav.about':"学校紹介",'nav.courses':"コースと学費",'nav.services':"サービス",'nav.gallery':"ギャラリー",'nav.admission':"入学",'nav.contact':"お問い合わせ",
+    'btn.apply':"今すぐ申請",
+    'home.eyebrow':"ベンガル語による日本語教育機関",
+    'home.title':"日本語を学び、日本への扉を開く。",
+    'home.subtitle':"経験豊富な教師陣によるベンガル語でのライブオンライン指導。N5からN3、会話コース、面接対策まで、試験対応の体系的な日本語教育。",
+    'home.kpi1':"生徒と教師の比率",'home.kpi2':"主要コースの期間（月）",'home.kpi3':"全授業がZoom/Meetでライブ",'home.kpi3num':"100%オンライン",
+    'home.why1':"Minna no Nihongoに基づくカリキュラム — 日本の多くの語学学校で使用されている教科書",
+    'home.why2':"ベンガル語と日本語のバイリンガル教師が、バングラデシュの生徒に伝わる方法で文法を説明",
+    'home.why3':"毎月のJLPT形式模擬試験と個別フィードバック",
+    'home.why4':"渡航前の大使館・学校面接のための専門指導",
+    'home.why5':"少人数のライブクラス — 生徒と社会人向けに午前・昼・夕方の時間帯",
+    'home.batchTitle':"現在の募集バッチ",'home.batchText':"新しいバッチを募集中です。少人数制のため定員に限りがあります。早めにお申し込みください。",
+    'batch.title':"現在募集中のバッチ",'batch.seats':"定員20名",
+    'batch.n5.desc':"最適なスタート地点 — ゼロから4ヶ月で読み書きと基礎会話を身につけます。",
+    'batch.n4.desc':"N5の次のステップ — より深い文法と語彙を、N4のJLPT試験に的を絞って学びます。",
+    'batch.conv.desc':"会話の自信だけに焦点を当てたコース — すでに日本語をある程度知っていて流暢さを求める方に。",
+    'news.label':"📢 お知らせ",
+    'news.1':"N5・N4 入学受付中",'news.2':"会話コース来月開講",'news.3':"大使館面接対策コース受付中",
+    'about.title':"スキルネストについて",
+    'about.text1':"スキルネストは、日本での勉強や就労を望みながらも、体系的でベンガル語による日本語教育を見つけられずにいるバングラデシュの学生が多いという気づきから始まりました。私たちのプログラムは、まさにそのギャップを埋めるために作られました。",
+    'about.text2':"授業は日本の語学学校で最も広く使われている教科書Minna no Nihongoに沿って進められるため、ここで学ぶ内容は日本到着後に求められる内容と一致します。各レッスンはまずベンガル語で説明し、その後日本語で練習します — 文法・語彙・JLPT形式の練習問題も含みます。",
+    'about.point1':"経験豊富なバイリンガル教師、少人数制",'about.point2':"毎月のJLPT形式模擬試験と詳細なフィードバック",'about.point3':"渡航前の大使館・学校面接指導",'about.point4':"全授業がライブオンライン — 通学不要、欠席の心配なし",
+    'about.principalTitle':"主任講師からのメッセージ",'about.principalMsg':"毎年、自分が思っている以上の力を持つ生徒たちに出会います。彼らに必要なのは正しい指導体系と、本当に理解できる言葉で説明してくれる人です。スキルネストが目指しているのはまさにそれ — 単なる語学コースではなく、最初の日本語の言葉から面接当日まで寄り添う存在です。",
+    'track.title':"実績",'track.note':"※ 以下はサンプルです。実際の実績が出たら置き換えてください。",
+    'track.since':"設立",'track.students':"卒業生数",'track.passrate':"N5/N4 合格率",'track.inJapan':"現在日本で就学・就労中",
+    'whybd.title':"バングラデシュの学生がスキルネストを選ぶ理由",
+    'whybd.p1':"まずすべてベンガル語で説明するので、知らない英語や日本語の単語のせいでつまずくことがありません",
+    'whybd.p2':"カリキュラムは日本の語学学校で使われるMinna no Nihongoに準拠 — 渡日後に学び直す必要がありません",
+    'whybd.p3':"バングラデシュ人応募者が実際に聞かれる内容に基づいた専門の大使館・学校面接指導",
+    'whybd.p4':"すでに日本で生活・就学している卒業生による非公式なネットワークが、新入生の定着をサポート",
+    'whybd.p5':"保護者へ定期的に進捗状況を報告するので、聞かなくても様子がわかります",
+    'whybd.p6':"希望者向けの女子限定バッチも選択可能",
+    'whybd.p7':"分割払いに対応 — コース料金を一括で支払う必要はありません",
+    'whybd.p8':"完全オンライン授業 — ダッカに限らずどの地域からでも参加可能",
+    'whybd.p9':"少人数バッチなので、全員が実際の会話練習と個別の指導を受けられます",
+    'whybd.p10':"各コース修了時に修了証を発行 — 申請書類にも役立ちます",
+    'testi.title':"生徒の声",'testi.note':"※ サンプルの感想です。実際の生徒の声に置き換えてください。",
+    'testi.1.quote':"「英語での日本語授業は全くついていけませんでした。ここでは文法をまずベンガル語で説明してくれるので、ようやく理解できました。」",
+    'testi.1.who':"— 元N5・N4コース生",
+    'testi.2.quote':"「模擬大使館面接のおかげで本番が楽に感じました。何を聞かれるか事前にわかっていたので。」",
+    'testi.2.who':"— 元大使館面接対策コース生",
+    'testi.3.quote':"「子供の進捗を直接報告してもらえるのが良かったです。オンライン授業でも対面の学校と同じくらい信頼できると感じました。」",
+    'testi.3.who':"— 会話コース生の保護者",
+    'courses.title':"コースと学費",'courses.note':"※ 全コースは完全オンラインで実施されます。",
+    'courses.col.course':"コース",'courses.col.duration':"期間",'courses.col.shift':"シフト",'courses.col.total':"総額（BDT）",'courses.col.monthly':"月額（BDT）",
+    'courses.onlineNote':"全授業はZoom/Google Meetでライブ実施されます — 授業の録画は、授業後にも提供されます。",
+    'unit.months':"ヶ月",'unit.month':"ヶ月",
+    'shift.morning':"午前",'shift.day':"昼",'shift.evening':"夕方",'shift.all':"午前・昼・夕方",
+    'course.conversation':"会話コース",'course.schoolInterview':"学校面接対策",'course.embassyInterview':"大使館面接対策",
+    'services.title':"追加サービス",'services.note':"※ 全サービスはオンラインで提供されます。",
+    'services.col1':"サービス",'services.col2':"詳細",'services.col3':"費用（BDT）",
+    'services.row1.s':"模擬面接セッション",'services.row1.d':"大使館・学校面接の個別練習",
+    'services.row2.s':"学習教材",'services.row2.d':"印刷教材と練習シート",
+    'services.row3.s':"書類コンサルティング",'services.row3.d':"ビザ・申請書類の確認",
+    'gallery.title':"ギャラリー",'gallery.note':"授業や指導風景の実際の写真です。",
+    'gallery.cap1':"N5バッチ — ライブオンライン授業",'gallery.cap2':"模擬JLPTテストの様子",
+    'gallery.cap3':"大使館面接指導",'gallery.cap4':"学習教材",
+    'gallery.videoTitle':"授業動画",'gallery.videoNote':"サンプル授業や生徒の近況をこのサイト内で視聴できます。",
+    'admission.title':"入学申込フォーム",
+    'form.studentName':"生徒氏名",'form.email':"メール",'form.studentPhone':"生徒の電話番号",'form.guardianName':"保護者名",'form.guardianPhone':"保護者電話",
+    'form.course':"コース",'form.message':"メッセージ（任意）",'form.submit':"申込を送信",
+    'form.afterSubmit':"申込を受け付けました！お支払いと今後の流れについて、まもなくご連絡いたします。",'form.demoNotice':"デモモード：フォームはローカルで検証されました。実際に送信するにはFormspreeを接続してください。",
+    'form.error':"エラーが発生しました。再度お試しいただくか、直接お問い合わせください。",
+    'form.notice':"送信後、お支払いと今後の流れについてこちらからご連絡します — 現時点でオンライン決済は不要です。",
+    'err.required':"この項目は必須です。",'err.email':"有効なメールアドレスを入力してください。",'err.phone':"有効なバングラデシュの電話番号を入力してください（例：01XXXXXXXXX）。",
+    'next.title':"申込後の流れ",
+    'next.step1':"1営業日以内に申込内容を確認します。",
+    'next.step2':"通常24〜48時間以内に、ご記入の電話番号へ担当者よりお電話します。",
+    'next.step3':"その電話でコース、時間帯、学費、お支払い方法（bKash/Nagad/銀行/現金）を確定します。",
+    'next.step4':"担当者の案内に従いお支払いが完了次第、席を確保します。",
+    'next.noteText':"お急ぎですか？",'next.contactBtn':"お問い合わせ",
+    'contact.title':"お問い合わせ",'contact.addr.label':"住所：",'contact.phone.label':"電話：",'contact.email.label':"メール：",
+    'contact.social':"Facebook",'contact.fbBtn':"Facebookページを見る",
+    'contact.callLabel':"電話：+880 1892-037793",'contact.waLabel':"WhatsApp：+880 1892-037793",'contact.mailLabel':"メール：jlanguagecenter@gmail.com",
+    'contact.fbNote':"Facebookページの最新投稿をここに表示しています。",
+    'footer':"無断転載を禁じます。"
+  }
+};
+
+const langSelect = document.getElementById('langSelect');
+function t(key){
+  const lang = langSelect.value;
+  return (dict[lang] && dict[lang][key]) || dict.en[key] || key;
+}
+function applyLang(){
+  document.documentElement.lang = langSelect.value;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    const val = t(key);
+    if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'){
+      el.placeholder = val;
+    } else {
+      el.textContent = val;
+    }
+  });
+  document.title = t('brand') + ' | ' + t('tagline');
+  localStorage.setItem('sn_lang', langSelect.value);
+  renderTicker(langSelect.value);
+}
+langSelect.addEventListener('change', applyLang);
+langSelect.value = localStorage.getItem('sn_lang') || 'bn';
+applyLang();
+</script>
+
+<!-- Facebook SDK — powers the live "recent posts" widget on the Contact page -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
+</body>
+</html>
