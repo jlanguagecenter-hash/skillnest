@@ -443,57 +443,18 @@
     <div class="grid">
       <div class="card">
         <h2 data-i18n="admission.title">Admission Form</h2>
-        <form id="admissionForm" novalidate>
-          <div class="row">
-            <div>
-              <label for="studentName" data-i18n="form.studentName">Student Name</label>
-              <input id="studentName" name="studentName" required />
-              <div class="err" data-err-for="studentName"></div>
-            </div>
-            <div>
-              <label for="email" data-i18n="form.email">Email</label>
-              <input id="email" type="email" name="email" required />
-              <div class="err" data-err-for="email"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label for="studentPhone" data-i18n="form.studentPhone">Student Phone</label>
-              <input id="studentPhone" name="studentPhone" placeholder="01XXXXXXXXX" pattern="^(?:\+?88)?01[3-9]\d{8}$" required />
-              <div class="err" data-err-for="studentPhone"></div>
-            </div>
-            <div>
-              <label for="guardianPhone" data-i18n="form.guardianPhone">Guardian Phone</label>
-              <input id="guardianPhone" name="guardianPhone" placeholder="01XXXXXXXXX" pattern="^(?:\+?88)?01[3-9]\d{8}$" required />
-              <div class="err" data-err-for="guardianPhone"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label for="guardianName" data-i18n="form.guardianName">Guardian Name</label>
-              <input id="guardianName" name="guardianName" required />
-              <div class="err" data-err-for="guardianName"></div>
-            </div>
-            <div>
-              <label for="applyCourse" data-i18n="form.course">Course</label>
-              <select id="applyCourse" name="course">
-                <option value="N5">N5</option>
-                <option value="N4">N4</option>
-                <option value="N3">N3</option>
-                <option value="CONV" data-i18n="course.conversation">Conversation Course</option>
-                <option value="SCHOOL_INT" data-i18n="course.schoolInterview">School Interview Preparation</option>
-                <option value="EMB_INT" data-i18n="course.embassyInterview">Embassy Interview Preparation</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label for="message" data-i18n="form.message">Message (optional)</label>
-            <textarea id="message" name="message" rows="3"></textarea>
-          </div>
-          <button class="btn primary" type="submit" id="submitBtn" data-i18n="form.submit">Submit Application</button>
-          <div class="status" id="formStatus"></div>
-          <p class="notice" data-i18n="form.notice">After you submit, we'll contact you about payment and next steps — no online payment needed right now.</p>
-        </form>
+        <!-- ADMISSION -->
+  <section id="admission">
+    <div class="grid">
+      <div class="card">
+        <h2 data-i18n="admission.title">Admission Form</h2>
+        
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYFM73iX5YiGpPJYAZ66YI_m5hBgE32BBhrWwaE2yLlQQxbw/viewform?embedded=true" width="100%" height="1529" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        
+      </div>
+
+      <div class="card">
+        <h2 data-i18n="next.title">What Happens After You Apply?</h2>
       </div>
 
       <div class="card">
@@ -645,69 +606,6 @@ function updateMap(){
   mapEl.src = `https://www.google.com/maps?q=${q}&output=embed`;
 }
 new MutationObserver(updateMap).observe(addrEl, {characterData:true, subtree:true, childList:true});
-
-/* ---------------- Admission form: real validation + real submit ---------------- */
-const form = document.getElementById('admissionForm');
-const submitBtn = document.getElementById('submitBtn');
-const statusBox = document.getElementById('formStatus');
-const phonePattern = /^(?:\+?88)?01[3-9]\d{8}$/;
-
-function setError(name, msg){
-  const el = form.querySelector(`[data-err-for="${name}"]`);
-  const input = form.querySelector(`[name="${name}"]`);
-  if(el) el.textContent = msg || '';
-  if(input) input.classList.toggle('invalid', !!msg);
-}
-
-function validate(data){
-  let ok = true;
-  if(!data.studentName.trim()){ setError('studentName', t('err.required')); ok = false; } else setError('studentName','');
-  if(!/^\S+@\S+\.\S+$/.test(data.email)){ setError('email', t('err.email')); ok = false; } else setError('email','');
-  if(!phonePattern.test(data.studentPhone)){ setError('studentPhone', t('err.phone')); ok = false; } else setError('studentPhone','');
-  if(!phonePattern.test(data.guardianPhone)){ setError('guardianPhone', t('err.phone')); ok = false; } else setError('guardianPhone','');
-  if(!data.guardianName.trim()){ setError('guardianName', t('err.required')); ok = false; } else setError('guardianName','');
-  return ok;
-}
-
-form.addEventListener('submit', async function(e){
-  e.preventDefault();
-  const data = Object.fromEntries(new FormData(form).entries());
-  if(!validate(data)) return;
-
-  submitBtn.disabled = true;
-  statusBox.className = 'status';
-  statusBox.textContent = '';
-
-  try{
-    if(SETTINGS.formspreeEndpoint.includes('YOUR_FORM_ID')){
-      // No real endpoint configured yet — still let the demo flow work locally.
-      console.warn('Formspree endpoint not set. See SETTINGS at top of <script>.');
-      statusBox.className = 'status ok';
-      statusBox.textContent = t('form.demoNotice');
-    } else {
-      const res = await fetch(SETTINGS.formspreeEndpoint, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form)
-      });
-      if(res.ok){
-        statusBox.className = 'status ok';
-        statusBox.textContent = t('form.afterSubmit');
-      } else {
-        statusBox.className = 'status bad';
-        statusBox.textContent = t('form.error');
-        submitBtn.disabled = false;
-        return;
-      }
-    }
-    form.reset();
-  } catch(err){
-    statusBox.className = 'status bad';
-    statusBox.textContent = t('form.error');
-  } finally {
-    submitBtn.disabled = false;
-  }
-});
 
 /* ---------------- i18n (bn / en / ja) ---------------- */
 const dict = {
