@@ -499,8 +499,9 @@
           <a class="contact-link" href="mailto:jlanguagecenter@gmail.com"><span class="cico">✉️</span> <span data-i18n="contact.mailLabel">Email: jlanguagecenter@gmail.com</span></a>
         </div>
         <div style="position: relative; margin-top: 14px; border-radius: 14px; overflow: hidden;">
-  <!-- এই অদৃশ্য লিংকটি ম্যাপের উপরে থাকবে এবং ক্লিক করলে অ্যাপ বা নতুন ট্যাবে নিয়ে যাবে -->
-  <a id="mapLink" href="https://www.google.com/maps/search/?api=1&query=Kalatiya%20Bazaar,%20Keraniganj%20Model,%20Dhaka%201313" target="_blank" rel="noopener" style="position: absolute; inset: 0; z-index: 10;"></a>
+  <!-- এখানে আপনার দেওয়া নির্দিষ্ট গুগল ম্যাপ লিংকটি বসানো হয়েছে -->
+  <a href="https://maps.app.goo.gl/Fp9xULADV22jH8qHA" target="_blank" rel="noopener" style="position: absolute; inset: 0; z-index: 10;"></a>
+  <!-- নিচে আপনার ওয়েবসাইটের ভেতর ম্যাপ দেখানোর কোড -->
   <iframe id="map" title="Google Map" width="100%" height="260" style="border:0; display:block;" allowfullscreen loading="lazy"
     src="https://www.google.com/maps?q=Kalatiya%20Bazaar,%20Keraniganj%20Model,%20Dhaka%201313&output=embed"></iframe>
 </div>
@@ -618,14 +619,9 @@ function renderTicker(lang){
 /* ---------------- Address -> map auto-update ---------------- */
 const addrEl = document.getElementById('schoolAddress');
 const mapEl = document.getElementById('map');
-const mapLinkEl = document.getElementById('mapLink'); // নতুন যোগ করা হলো
-
 function updateMap(){
   const q = encodeURIComponent(addrEl.textContent.trim());
   mapEl.src = `https://www.google.com/maps?q=${q}&output=embed`;
-  if(mapLinkEl) {
-    mapLinkEl.href = `https://www.google.com/maps/search/?api=1&query=${q}`; // ক্লিক লিংক আপডেট
-  }
 }
 new MutationObserver(updateMap).observe(addrEl, {characterData:true, subtree:true, childList:true});
 
