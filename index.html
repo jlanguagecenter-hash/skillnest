@@ -159,15 +159,20 @@
 
   footer{border-top:1px solid var(--border);padding:30px 20px;color:var(--muted);text-align:center;font-size:.9rem}
 
-  @media (max-width: 1050px){
-    .grid{grid-template-columns:1fr}
-    .row{grid-template-columns:1fr}
+  /* ল্যাপটপ বা ট্যাবলেটে জায়গা কম থাকলে মেনুটিকে (☰) তে রূপান্তর করবে */
+  @media (max-width: 1200px){
     .menuBtn{display:inline-flex}
     .tabs{position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--border);flex-direction:column;padding:10px 16px;display:none;box-shadow:0 10px 24px rgba(2,6,23,.08)}
     .tabs.open{display:flex}
     header{position:sticky}
     .nav{position:relative;padding:10px 14px}
     .brand small{display:none}
+  }
+
+  /* মোবাইল বা ছোট স্ক্রিনে বডির কার্ডগুলোর সাইজ ঠিক করবে */
+  @media (max-width: 860px){
+    .grid{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr}
     #applyBtn{padding:8px 14px;font-size:12.5px}
   }
   @media (max-width: 480px){
