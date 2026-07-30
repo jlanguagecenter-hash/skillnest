@@ -492,14 +492,18 @@
     <div class="grid" style="align-items: start;">
       <div class="card">
         <h2 data-i18n="contact.title">Contact Us</h2>
-        <p><strong data-i18n="contact.addr.label">Address:</strong> <span id="schoolAddress">Kalatiya Bazaar, Keraniganj Model, Dhaka 1313</span></p>
+        <p><strong data-i18n="contact.addr.label">Address:</strong> <span data-i18n="contact.address">Kalatiya Bazaar, Keraniganj Model, Dhaka 1313</span><span id="schoolAddress" style="display:none;">Kalatiya Bazaar, Keraniganj Model, Dhaka 1313</span></p>
         <div class="contact-links">
           <a class="contact-link" href="tel:+8801892037793"><span class="cico">📞</span> <span data-i18n="contact.callLabel">Call: +880 1892-037793</span></a>
           <a class="contact-link" href="https://wa.me/8801892037793" target="_blank" rel="noopener"><span class="cico">💬</span> <span data-i18n="contact.waLabel">WhatsApp: +880 1892-037793</span></a>
           <a class="contact-link" href="mailto:jlanguagecenter@gmail.com"><span class="cico">✉️</span> <span data-i18n="contact.mailLabel">Email: jlanguagecenter@gmail.com</span></a>
         </div>
-        <iframe id="map" title="Google Map" width="100%" height="260" style="border:0;border-radius:14px;margin-top:14px" allowfullscreen loading="lazy"
-          src="https://www.google.com/maps?q=Kalatiya%20Bazaar,%20Keraniganj%20Model,%20Dhaka%201313&output=embed"></iframe>
+        <div style="position: relative; margin-top: 14px; border-radius: 14px; overflow: hidden;">
+  <!-- এই অদৃশ্য লিংকটি ম্যাপের উপরে থাকবে এবং ক্লিক করলে অ্যাপ বা নতুন ট্যাবে নিয়ে যাবে -->
+  <a id="mapLink" href="https://www.google.com/maps/search/?api=1&query=Kalatiya%20Bazaar,%20Keraniganj%20Model,%20Dhaka%201313" target="_blank" rel="noopener" style="position: absolute; inset: 0; z-index: 10;"></a>
+  <iframe id="map" title="Google Map" width="100%" height="260" style="border:0; display:block;" allowfullscreen loading="lazy"
+    src="https://www.google.com/maps?q=Kalatiya%20Bazaar,%20Keraniganj%20Model,%20Dhaka%201313&output=embed"></iframe>
+</div>
       </div>
       <div class="card">
         <h2 data-i18n="contact.social">Facebook</h2>
@@ -614,9 +618,14 @@ function renderTicker(lang){
 /* ---------------- Address -> map auto-update ---------------- */
 const addrEl = document.getElementById('schoolAddress');
 const mapEl = document.getElementById('map');
+const mapLinkEl = document.getElementById('mapLink'); // নতুন যোগ করা হলো
+
 function updateMap(){
   const q = encodeURIComponent(addrEl.textContent.trim());
   mapEl.src = `https://www.google.com/maps?q=${q}&output=embed`;
+  if(mapLinkEl) {
+    mapLinkEl.href = `https://www.google.com/maps/search/?api=1&query=${q}`; // ক্লিক লিংক আপডেট
+  }
 }
 new MutationObserver(updateMap).observe(addrEl, {characterData:true, subtree:true, childList:true});
 
@@ -708,7 +717,7 @@ const dict = {
     'next.step3':"We confirm your course, batch timing, fees, and payment method (bKash/Nagad/bank/cash) on that call.",
     'next.step4':"Your seat is reserved once payment is completed as guided by our team.",
     'next.noteText':"Prefer not to wait?",'next.contactBtn':"Contact Us",
-    'contact.title':"Contact Us",'contact.addr.label':"Address:",'contact.phone.label':"Phone:",'contact.email.label':"Email:",
+    'contact.title':"Contact Us",'contact.addr.label':"Address:",'contact.phone.label':"Phone:",'contact.email.label':"Email:",'contact.address':"Kalatiya Bazaar, Keraniganj Model, Dhaka 1313",
     'contact.social':"Facebook",'contact.fbBtn':"Visit our Facebook Page",
     'contact.callLabel':"Call: +880 1892-037793",'contact.waLabel':"WhatsApp: +880 1892-037793",'contact.mailLabel':"Email: jlanguagecenter@gmail.com",
     'contact.fbNote':"Our latest posts, shown live from our Facebook Page. like and follow us for more updates.",
@@ -800,7 +809,7 @@ const dict = {
     'next.step3':"সেই কলেই আপনার কোর্স, ব্যাচের সময়, ফি এবং পেমেন্ট পদ্ধতি (বিকাশ/নগদ/ব্যাংক/ক্যাশ) নিশ্চিত করা হবে।",
     'next.step4':"আমাদের টিমের নির্দেশনা অনুযায়ী পেমেন্ট সম্পন্ন হলেই আপনার আসন সংরক্ষিত হবে।",
     'next.noteText':"অপেক্ষা করতে না চাইলে?",'next.contactBtn':"যোগাযোগ করুন",
-    'contact.title':"যোগাযোগ",'contact.addr.label':"ঠিকানা:",'contact.phone.label':"ফোন:",'contact.email.label':"ইমেইল:",
+    'contact.title':"যোগাযোগ",'contact.addr.label':"ঠিকানা:",'contact.phone.label':"ফোন:",'contact.email.label':"ইমেইল:",'contact.address':"কলাতিয়া বাজার, কেরানীগঞ্জ মডেল, ঢাকা ১৩১৩",
     'contact.social':"ফেসবুক ও ইউটিউব",'contact.fbBtn':"আমাদের ফেসবুক পেজ দেখুন",
     'contact.callLabel':"কল করুন: +৮৮০ ১৮৯২-০৩৭৭৯৩",'contact.waLabel':"হোয়াটসঅ্যাপ: +৮৮০ ১৮৯২-০৩৭৭৯৩",'contact.mailLabel':"ইমেইল: jlanguagecenter@gmail.com",
     'contact.fbNote':"আমাদের ফেসবুক পেজের সাম্প্রতিক পোস্ট এখানে সরাসরি দেখানো হচ্ছে। আরও আপডেটের জন্য আমাদের লাইক ও ফলো করুন।",
@@ -892,7 +901,7 @@ const dict = {
     'next.step3':"その電話でコース、時間帯、学費、お支払い方法（bKash/Nagad/銀行/現金）を確定します。",
     'next.step4':"担当者の案内に従いお支払いが完了次第、席を確保します。",
     'next.noteText':"お急ぎですか？",'next.contactBtn':"お問い合わせ",
-    'contact.title':"お問い合わせ",'contact.addr.label':"住所：",'contact.phone.label':"電話：",'contact.email.label':"メール：",
+    'contact.title':"お問い合わせ",'contact.addr.label':"住所：",'contact.phone.label':"電話：",'contact.email.label':"メール：",'contact.address':"カラティヤ・バザール、ケラニガンジ・モデル、ダッカ 1313",
     'contact.social':"Facebook",'contact.fbBtn':"Facebookページを見る",
     'contact.callLabel':"電話：+880 1892-037793",'contact.waLabel':"WhatsApp：+880 1892-037793",'contact.mailLabel':"メール：jlanguagecenter@gmail.com",
     'contact.fbNote':"Facebookページの最新投稿をここに表示しています。最新情報をもっと知りたい方は、いいねとフォローをお願いします。",
