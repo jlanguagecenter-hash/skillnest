@@ -88,10 +88,10 @@
   .nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;flex-wrap:nowrap}
   .brand{display:flex;align-items:center;gap:12px;min-width:0;flex-shrink:0}
   .logo{width:42px;height:42px;border-radius:12px;background:transparent;display:grid;place-items:center;color:var(--brand);font-weight:800;flex-shrink:0}
-  .brand h1{font-size:18px;margin:0;font-weight:800;white-space:nowrap}
+  .brand h1{font-size:17px;margin:0;font-weight:800;line-height:1.2;}
   .brand small{display:block;color:var(--muted);font-size:12px;font-weight:500;white-space:nowrap}
 
-  .tabs{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;flex:1;justify-content:center;min-width:0;scrollbar-width:none}
+  .tabs{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;flex:1;justify-content:flex-end;min-width:0;scrollbar-width:none}
   .tabs::-webkit-scrollbar{display:none}
   .tab{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);cursor:pointer;color:var(--text);font-weight:600;font-size:13.5px; white-space:nowrap; flex-shrink:0;}
   .tab.active{background:linear-gradient(135deg,rgba(37,99,235,.10),rgba(16,185,129,.10));border-color:#bfdbfe;color:var(--brand)}
@@ -99,7 +99,7 @@
   .controls{display:flex;align-items:center;gap:10px;flex-wrap:nowrap;flex-shrink:0}
   select,input,textarea,button{font:inherit}
   .lang{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #cbd5e1;color:var(--text)}
-  .btn{padding:10px 16px;border-radius:12px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer;font-weight:700;transition:transform .05s ease,box-shadow .2s ease;white-space:nowrap;}
+  .btn{padding:10px 16px;border-radius:12px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer;font-weight:700;transition:transform .05s ease,box-shadow .2s ease;white-space:nowrap;flex-shrink:0;}
   .btn:hover{box-shadow:0 6px 20px rgba(2,6,23,.08)}
   .btn:active{transform:translateY(1px)}
   .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(37,99,235,.28)}
@@ -207,7 +207,7 @@
       <div class="logo"><img src="logo.png" alt="School Logo" onerror="this.style.display='none'; this.parentElement.textContent='SN';" style="width:100%;height:100%;object-fit:contain;border-radius:12px"></div>
       <div>
         <h1 data-i18n="brand">SkillNest</h1>
-        <small data-i18n="tagline">Japanese Language &amp; Skills Training</small>
+        <small data-i18n="tagline" style="display:none;">Japanese Language &amp; Skills Training</small>
       </div>
     </div>
     <button class="menuBtn" id="menuBtn" aria-label="Menu">☰</button>
