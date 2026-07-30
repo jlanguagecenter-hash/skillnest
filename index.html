@@ -52,6 +52,7 @@
     background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;
     display:grid;place-items:center;font-size:12px;font-weight:800}
 
+  /* Prominent news bar — shown right at the top of Home so it's the first thing seen */
   .news-bar{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--brand),var(--accent));
     color:#fff;border-radius:14px;padding:10px 16px;margin-bottom:18px;overflow:hidden}
   .news-bar .news-label{flex-shrink:0;font-weight:800;font-size:12.5px;background:rgba(255,255,255,.18);
@@ -60,6 +61,7 @@
   .news-bar .news-inner{display:flex;gap:48px;white-space:nowrap;animation:scroll 20s linear infinite}
   .news-bar:hover .news-inner{animation-play-state:paused}
 
+  /* Batch cards on Home */
   .batch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
   .batch-card{background:#f8fafc;border:1px solid var(--border);border-radius:14px;padding:16px;position:relative}
   .batch-card .seatBadge{position:absolute;top:14px;right:14px;background:#ecfdf5;color:#065f46;
@@ -67,6 +69,7 @@
   .batch-card h4{margin:0 0 6px;font-size:16px}
   .batch-card p{margin:0;font-size:13.5px;color:var(--muted)}
 
+  /* Video / gallery grids */
   .video-grid,.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}
   .video-card{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;background:#000}
   .video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -74,6 +77,7 @@
   .gallery-card img{width:100%;height:190px;object-fit:cover;display:block}
   .gallery-card .cap{padding:8px 10px;font-size:12.5px;color:var(--muted)}
 
+  /* Contact quick-links */
   .contact-links{display:grid;gap:10px;margin-top:14px}
   .contact-link{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:12px;
     border:1px solid var(--border);background:#f8fafc;color:var(--text);font-weight:600;font-size:14px}
@@ -178,6 +182,7 @@
     th, td { padding: 8px 6px; white-space: normal; }
     .news-bar{flex-wrap:wrap;padding:8px 12px}
     
+    /* Header & Apply Now Button Fixes for Mobile */
     .nav { padding: 10px 8px; gap: 6px; }
     .brand { gap: 6px; }
     .brand h1 { font-size: 15px; }
@@ -196,7 +201,7 @@
     <div class="brand">
       <div class="logo"><img src="logo.png" alt="School Logo" onerror="this.style.display='none'; this.parentElement.textContent='SN';" style="width:100%;height:100%;object-fit:contain;border-radius:12px"></div>
       <div>
-        <h1 data-i18n="brand">SkillNest Japanese Language School</h1>
+        <h1 data-i18n="brand">SkillNest</h1>
         <small data-i18n="tagline">Japanese Language &amp; Skills Training</small>
       </div>
     </div>
@@ -280,7 +285,7 @@
     <div class="card hero-card" style="margin-top:20px">
       <span class="eyebrow" data-i18n="pro.eyebrow">5+ Years of Experience</span>
       <h3 data-i18n="pro.title">Professional Interpreter &amp; Document Translation Services</h3>
-      <p data-i18n="pro.subtitle">Beyond the classroom, SkillNest Japanese Language School also provides premium Bangla–English–Japanese interpretation and document translation — trusted by individuals and international companies alike.</p>
+      <p data-i18n="pro.subtitle">Beyond the classroom, SkillNest also provides premium Bangla–English–Japanese interpretation and document translation — trusted by individuals and international companies alike.</p>
       <ul class="why-list">
         <li><span class="ico">✓</span><span data-i18n="pro.p1">5+ years of hands-on interpretation and translation experience across Bangla, English, and Japanese</span></li>
         <li><span class="ico">✓</span><span data-i18n="pro.p2">Pre-script preparation before every interpretation session, so nothing is lost in the moment</span></li>
@@ -299,8 +304,8 @@
   <section id="about">
     <div class="grid">
       <div class="card">
-        <h2 data-i18n="about.title">About SkillNest Japanese Language School</h2>
-        <p data-i18n="about.text1">SkillNest Japanese Language School started with a simple observation: many talented students in Bangladesh want to study or work in Japan, but struggle to find Japanese language training that is both structured and taught in a language they're comfortable in. We built our program to close exactly that gap.</p>
+        <h2 data-i18n="about.title">About SkillNest</h2>
+        <p data-i18n="about.text1">SkillNest started with a simple observation: many talented students in Bangladesh want to study or work in Japan, but struggle to find Japanese language training that is both structured and taught in a language they're comfortable in. We built our program to close exactly that gap.</p>
         <p data-i18n="about.text2">Our classes follow Minna no Nihongo, the textbook most widely used in Japanese language schools, so what you learn here lines up with what you'll be expected to know once you arrive in Japan. Every lesson is explained in Bangla first, then reinforced in Japanese — grammar, vocabulary, and JLPT-style practice questions included.</p>
         <ul>
           <li data-i18n="about.point1">Experienced, bilingual teachers with small batch sizes</li>
@@ -310,10 +315,10 @@
         </ul>
       </div>
       <div class="card">
-        <h3 data-i18n="about.principalTitle">A Note From Our Leader</h3>
+        <h3 data-i18n="about.principalTitle">A Note From Our Lead Instructor</h3>
         <div style="display:flex;gap:14px;align-items:flex-start;margin-top:10px">
           <img class="instructor-img" src="instructor.jpg" alt="Lead Instructor" onerror="this.style.display='none'">
-          <p style="margin:0" data-i18n="about.principalMsg">Every year I meet students who are capable of far more than they believe — they just need the right structure and someone explaining things in a language that actually makes sense to them. That's what we try to be at SkillNest Japanese Language School: not just a language course, but a steady hand from your first Japanese word to your interview day.</p>
+          <p style="margin:0" data-i18n="about.principalMsg">Every year I meet students who are capable of far more than they believe — they just need the right structure and someone explaining things in a language that actually makes sense to them. That's what we try to be at SkillNest: not just a language course, but a steady hand from your first Japanese word to your interview day.</p>
         </div>
       </div>
     </div>
@@ -329,7 +334,7 @@
     </div>
 
     <div class="card" style="margin-top:20px">
-      <h3 data-i18n="whybd.title">Why Bangladeshi Students Choose SkillNest Japanese Language School</h3>
+      <h3 data-i18n="whybd.title">Why Bangladeshi Students Choose SkillNest</h3>
       <ul class="why-list">
         <li><span class="ico">✓</span><span data-i18n="whybd.p1">Everything is explained in Bangla first — you're never lost because of an English or Japanese word you don't know yet</span></li>
         <li><span class="ico">✓</span><span data-i18n="whybd.p2">Curriculum matches Minna no Nihongo, the same textbook used in language schools in Japan — no relearning once you arrive</span></li>
@@ -494,10 +499,12 @@
           <a class="contact-link" href="mailto:jlanguagecenter@gmail.com"><span class="cico">✉️</span> <span data-i18n="contact.mailLabel">Email: jlanguagecenter@gmail.com</span></a>
         </div>
         <div style="position: relative; margin-top: 14px; border-radius: 14px; overflow: hidden;">
-          <a href="https://maps.app.goo.gl/Fp9xULADV22jH8qHA" target="_blank" rel="noopener" style="position: absolute; inset: 0; z-index: 10;"></a>
-          <iframe id="map" title="Google Map" width="100%" height="260" style="border:0; display:block;" allowfullscreen loading="lazy"
-            src="https://www.google.com/maps?q=Kalatiya%20Bazaar,%20Keraniganj%20Model,%20Dhaka%201313&output=embed"></iframe>
-        </div>
+  <!-- এখানে আপনার দেওয়া নির্দিষ্ট গুগল ম্যাপ লিংকটি বসানো হয়েছে -->
+  <a href="https://maps.app.goo.gl/Fp9xULADV22jH8qHA" target="_blank" rel="noopener" style="position: absolute; inset: 0; z-index: 10;"></a>
+  <!-- নিচে আপনার ওয়েবসাইটের ভেতর ম্যাপ দেখানোর কোড -->
+  <iframe id="map" title="Google Map" width="100%" height="260" style="border:0; display:block;" allowfullscreen loading="lazy"
+    src="https://www.google.com/maps?q=Kalatiya%20Bazaar,%20Keraniganj%20Model,%20Dhaka%201313&output=embed"></iframe>
+</div>
       </div>
       <div class="card">
         <h2 data-i18n="contact.social">Facebook</h2>
@@ -518,7 +525,7 @@
 </main>
 
 <footer>
-  <div class="container">© <span id="year"></span> <span data-i18n="brand">SkillNest Japanese Language School</span>. <span data-i18n="footer">All rights reserved.</span></div>
+  <div class="container">© <span id="year"></span> <span data-i18n="brand">SkillNest</span>. <span data-i18n="footer">All rights reserved.</span></div>
 </footer>
 
 <script>
@@ -621,7 +628,7 @@ new MutationObserver(updateMap).observe(addrEl, {characterData:true, subtree:tru
 /* ---------------- i18n (bn / en / ja) ---------------- */
 const dict = {
   en:{
-    brand:"SkillNest Japanese Language School", tagline:"Japanese Language school",
+    brand:"SkillNest", tagline:"Japanese Language school",
     'nav.home':"Home",'nav.about':"About",'nav.courses':"Courses & Fees",'nav.services':"Services",'nav.gallery':"Gallery",'nav.admission':"Admission",'nav.contact':"Contact",
     'btn.apply':"Apply Now",
     'home.eyebrow':"Bangla-medium Japanese Language Institute",
@@ -640,7 +647,7 @@ const dict = {
     'batch.conv.desc':"Focused purely on speaking confidence — for students who already know some Japanese and want fluency.",
     'pro.eyebrow':"5+ Years of Experience",
     'pro.title':"Professional Interpreter & Document Translation Services",
-    'pro.subtitle':"Beyond the classroom, SkillNest Japanese Language School also provides premium Bangla–English–Japanese interpretation and document translation — trusted by individuals and international companies alike.",
+    'pro.subtitle':"Beyond the classroom, SkillNest also provides premium Bangla–English–Japanese interpretation and document translation — trusted by individuals and international companies alike.",
     'pro.p1':"5+ years of hands-on interpretation and translation experience across Bangla, English, and Japanese",
     'pro.p2':"Pre-script preparation before every interpretation session, so nothing is lost in the moment",
     'pro.p3':"Careful proofreading on every translated document before it's delivered to you",
@@ -649,14 +656,14 @@ const dict = {
     'pro.pricingBtn':"See Pricing",'pro.quoteBtn':"Get a Quote",
     'news.label':"📢 NEWS",
     'news.1':"Admissions open for N5 & N4",'news.2':"New Conversation Course starts next month",'news.3':"Embassy Interview Prep batches available",
-    'about.title':"About SkillNest Japanese Language School",
-    'about.text1':"SkillNest Japanese Language School started with a simple observation: many talented students in Bangladesh want to study or work in Japan, but struggle to find Japanese language training that is both structured and taught in a language they're comfortable in. We built our program to close exactly that gap.",
+    'about.title':"About SkillNest",
+    'about.text1':"SkillNest started with a simple observation: many talented students in Bangladesh want to study or work in Japan, but struggle to find Japanese language training that is both structured and taught in a language they're comfortable in. We built our program to close exactly that gap.",
     'about.text2':"Our classes follow Minna no Nihongo, the textbook most widely used in Japanese language schools, so what you learn here lines up with what you'll be expected to know once you arrive in Japan. Every lesson is explained in Bangla first, then reinforced in Japanese — grammar, vocabulary, and JLPT-style practice questions included.",
     'about.point1':"Experienced, bilingual teachers with small batch sizes",'about.point2':"JLPT-style mock tests every month, with detailed feedback",'about.point3':"Dedicated embassy & school interview coaching before departure",'about.point4':"All classes conducted live online — no commute, no missed lessons",
-    'about.principalTitle':"A Note From Our Leader",'about.principalMsg':"Every year I meet students who are capable of far more than they believe — they just need the right structure and someone explaining things in a language that actually makes sense to them. That's what we try to be at SkillNest Japanese Language School: not just a language course, but a steady hand from your first Japanese word to your interview day.",
+    'about.principalTitle':"A Note From Our Lead Instructor",'about.principalMsg':"Every year I meet students who are capable of far more than they believe — they just need the right structure and someone explaining things in a language that actually makes sense to them. That's what we try to be at SkillNest BD: not just a language course, but a steady hand from your first Japanese word to your interview day.",
     'track.title':"Our Track Record",'track.note':"* Sample numbers — replace with your real track record once you have it.",
     'track.since':"Founded",'track.students':"Students Trained",'track.passrate':"N5/N4 Pass Rate",'track.inJapan':"Now Studying/Working in Japan",
-    'whybd.title':"Why Bangladeshi Students Choose SkillNest Japanese Language School",
+    'whybd.title':"Why Bangladeshi Students Choose SkillNest",
     'whybd.p1':"Everything is explained in Bangla first — you're never lost because of an English or Japanese word you don't know yet",
     'whybd.p2':"Curriculum matches Minna no Nihongo, the same textbook used in language schools in Japan — no relearning once you arrive",
     'whybd.p3':"Dedicated embassy & school interview coaching built specifically around what Bangladeshi applicants are asked",
@@ -706,15 +713,14 @@ const dict = {
     'next.step3':"We confirm your course, batch timing, fees, and payment method (bKash/Nagad/bank/cash) on that call.",
     'next.step4':"Your seat is reserved once payment is completed as guided by our team.",
     'next.noteText':"Prefer not to wait?",'next.contactBtn':"Contact Us",
-    'contact.title':"Contact Us",'contact.addr.label':"Address:",'contact.address':"Kalatiya Bazaar, Keraniganj Model, Dhaka 1313",
-    'contact.phone.label':"Phone:",'contact.email.label':"Email:",
+    'contact.title':"Contact Us",'contact.addr.label':"Address:",'contact.phone.label':"Phone:",'contact.email.label':"Email:",'contact.address':"Kalatiya Bazaar, Keraniganj Model, Dhaka 1313",
     'contact.social':"Facebook",'contact.fbBtn':"Visit our Facebook Page",
     'contact.callLabel':"Call: +880 1892-037793",'contact.waLabel':"WhatsApp: +880 1892-037793",'contact.mailLabel':"Email: jlanguagecenter@gmail.com",
     'contact.fbNote':"Our latest posts, shown live from our Facebook Page. like and follow us for more updates.",
     'footer':"All rights reserved."
   },
   bn:{
-    brand:"স্কিলনেস্ট জাপানিজ ল্যাঙ্গুয়েজ স্কুল", tagline:"জাপানি ভাষার স্কুল",
+    brand:"স্কিলনেস্ট", tagline:"জাপানি ভাষার স্কুল",
     'nav.home':"হোম",'nav.about':"আমাদের সম্পর্কে",'nav.courses':"কোর্স ও ফি",'nav.services':"সেবাসমূহ",'nav.gallery':"গ্যালারি",'nav.admission':"ভর্তি",'nav.contact':"যোগাযোগ",
     'btn.apply':"এখনই আবেদন করুন",
     'home.eyebrow':"বাংলা মাধ্যমে জাপানি ভাষা প্রশিক্ষণ প্রতিষ্ঠান",
@@ -733,7 +739,7 @@ const dict = {
     'batch.conv.desc':"শুধু কথা বলার আত্মবিশ্বাসের উপর ফোকাস — যারা আগে থেকে কিছুটা জাপানি জানেন এবং সাবলীলতা চান তাদের জন্য।",
     'pro.eyebrow':"৫+ বছরের অভিজ্ঞতা",
     'pro.title':"পেশাদার ইন্টারপ্রেটার ও ডকুমেন্ট ট্রান্সলেশন সেবা",
-    'pro.subtitle':"ক্লাসরুমের বাইরেও, স্কিলনেস্ট জাপানিজ ল্যাঙ্গুয়েজ স্কুল প্রিমিয়াম বাংলা–ইংরেজি–জাপানি ইন্টারপ্রিটেশন ও ডকুমেন্ট ট্রান্সলেশন সেবা প্রদান করে — ব্যক্তি ও আন্তর্জাতিক কোম্পানি উভয়েরই আস্থাভাজন।",
+    'pro.subtitle':"ক্লাসরুমের বাইরেও, স্কিলনেস্ট প্রিমিয়াম বাংলা–ইংরেজি–জাপানি ইন্টারপ্রিটেশন ও ডকুমেন্ট ট্রান্সলেশন সেবা প্রদান করে — ব্যক্তি ও আন্তর্জাতিক কোম্পানি উভয়েরই আস্থাভাজন।",
     'pro.p1':"বাংলা, ইংরেজি ও জাপানি — তিন ভাষা জুড়ে ৫+ বছরের হাতে-কলমে ইন্টারপ্রিটেশন ও ট্রান্সলেশন অভিজ্ঞতা",
     'pro.p2':"প্রতিটি ইন্টারপ্রিটেশন সেশনের আগে পূর্ব-প্রস্তুতি (pre-script preparation), যাতে মুহূর্তের মধ্যে কিছু হারিয়ে না যায়",
     'pro.p3':"প্রতিটি অনূদিত ডকুমেন্ট আপনার কাছে পৌঁছানোর আগে যত্নসহকারে প্রুফরিড করা হয়",
@@ -742,14 +748,14 @@ const dict = {
     'pro.pricingBtn':"মূল্য দেখুন",'pro.quoteBtn':"কোট নিন",
     'news.label':"📢 সংবাদ",
     'news.1':"এন৫ ও এন৪ ভর্তি চলছে",'news.2':"নতুন কনভারসেশন কোর্স আগামী মাসে",'news.3':"এম্ব্যাসি ইন্টারভিউ প্রস্তুতি ব্যাচ খোলা",
-    'about.title':"স্কিলনেস্ট জাপানিজ ল্যাঙ্গুয়েজ স্কুল সম্পর্কে",
-    'about.text1':"স্কিলনেস্ট জাপানিজ ল্যাঙ্গুয়েজ স্কুল-এর শুরু একটা সাধারণ পর্যবেক্ষণ থেকে — বাংলাদেশের অনেক মেধাবী শিক্ষার্থী জাপানে পড়তে বা কাজ করতে চান, কিন্তু এমন জাপানি ভাষা শিক্ষা খুঁজে পান না যা একইসাথে গোছানো এবং তাদের স্বাচ্ছন্দ্যের ভাষায় শেখানো হয়। ঠিক এই ফাঁকটা পূরণ করতেই আমাদের প্রোগ্রাম তৈরি।",
+    'about.title':"স্কিলনেস্ট সম্পর্কে",
+    'about.text1':"স্কিলনেস্ট এর শুরু একটা সাধারণ পর্যবেক্ষণ থেকে — বাংলাদেশের অনেক মেধাবী শিক্ষার্থী জাপানে পড়তে বা কাজ করতে চান, কিন্তু এমন জাপানি ভাষা শিক্ষা খুঁজে পান না যা একইসাথে গোছানো এবং তাদের স্বাচ্ছন্দ্যের ভাষায় শেখানো হয়। ঠিক এই ফাঁকটা পূরণ করতেই আমাদের প্রোগ্রাম তৈরি।",
     'about.text2':"আমাদের ক্লাস Minna no Nihongo বই অনুসরণ করে, যা জাপানের ভাষা স্কুলগুলোতে সবচেয়ে বেশি ব্যবহৃত হয় — তাই এখানে যা শিখবেন, জাপানে পৌঁছানোর পর তার সাথেই মিলবে। প্রতিটি পাঠ প্রথমে বাংলায় বোঝানো হয়, তারপর জাপানিতে অনুশীলন করানো হয় — ব্যাকরণ, শব্দভাণ্ডার ও JLPT-স্টাইল প্রশ্ন সহ।",
-    'about.point1':"অভিজ্ঞ, দ্বিভাষিক শিক্ষক ও ছোট ব্যাচ",'about.point2':"প্রতি মাসে JLPT-স্টাইল মক টেস্ট, বিস্তারিত ফিডব্যাকসহ",'about.point3':"যাওয়ার আগে এম্ব্যাসি ও স্কুল ইন্টারভিউ কোচিং",'about.point4':"সব ক্লাস লাইভ অনলাইনে — যাতায়াতের ঝামেলা নেই, ক্লাস মিস হয়বিধা",
-    'about.principalTitle':"আমাদের লিডারের একটি কথা",'about.principalMsg':"প্রতি বছর আমি এমন শিক্ষার্থী দেখি যারা নিজেদের ভাবনার চেয়ে অনেক বেশি সক্ষম — শুধু দরকার সঠিক কাঠামো আর এমন কেউ যে তাদের বোধগম্য ভাষায় বুঝিয়ে দেবে। স্কিলনেস্ট জাপানিজ ল্যাঙ্গুয়েজ স্কুল-এ আমরা ঠিক সেটাই হতে চাই — শুধু একটা ভাষা কোর্স নয়, বরং জাপানি ভাষার প্রথম শব্দ থেকে ইন্টারভিউয়ের দিন পর্যন্ত একটা নির্ভরযোগ্য সহায়তা।",
+    'about.point1':"অভিজ্ঞ, দ্বিভাষিক শিক্ষক ও ছোট ব্যাচ",'about.point2':"প্রতি মাসে JLPT-স্টাইল মক টেস্ট, বিস্তারিত ফিডব্যাকসহ",'about.point3':"যাওয়ার আগে এম্ব্যাসি ও স্কুল ইন্টারভিউ কোচিং",'about.point4':"সব ক্লাস লাইভ অনলাইনে — যাতায়াতের ঝামেলা নেই, ক্লাস মিস হয় না",
+    'about.principalTitle':"আমাদের প্রধান প্রশিক্ষকের একটি কথা",'about.principalMsg':"প্রতি বছর আমি এমন শিক্ষার্থী দেখি যারা নিজেদের ভাবনার চেয়ে অনেক বেশি সক্ষম — শুধু দরকার সঠিক কাঠামো আর এমন কেউ যে তাদের বোধগম্য ভাষায় বুঝিয়ে দেবে। স্কিলনেস্ট এ আমরা ঠিক সেটাই হতে চাই — শুধু একটা ভাষা কোর্স নয়, বরং জাপানি ভাষার প্রথম শব্দ থেকে ইন্টারভিউয়ের দিন পর্যন্ত একটা নির্ভরযোগ্য সহায়তা।",
     'track.title':"আমাদের অর্জন",'track.note':"* নিচের সংখ্যা নমুনা — নিজের প্রকৃত তথ্য দিয়ে পরিবর্তন করুন।",
     'track.since':"প্রতিষ্ঠিত",'track.students':"প্রশিক্ষিত শিক্ষার্থী",'track.passrate':"N5/N4 পাসের হার",'track.inJapan':"বর্তমানে জাপানে অধ্যয়নরত/কর্মরত",
-    'whybd.title':"কেন বাংলাদেশি শিক্ষার্থীরা স্কিলনেস্ট জাপানিজ ল্যাঙ্গুয়েজ স্কুল বেছে নেয়",
+    'whybd.title':"কেন বাংলাদেশি শিক্ষার্থীরা স্কিলনেস্ট বেছে নেয়",
     'whybd.p1':"সবকিছু আগে বাংলায় বোঝানো হয় — ইংরেজি বা জাপানি শব্দ না জানার কারণে কখনো আটকে থাকতে হয় না",
     'whybd.p2':"কারিকুলাম Minna no Nihongo বইয়ের সাথে মিলে যায় — জাপানের ভাষা স্কুলে একই বই পড়ানো হয়, তাই নতুন করে শেখার দরকার হয় না",
     'whybd.p3':"বাংলাদেশি আবেদনকারীদের যা জিজ্ঞাসা করা হয় তার উপর ভিত্তি করে বিশেষ এম্ব্যাসি ও স্কুল ইন্টারভিউ কোচিং",
@@ -796,18 +802,17 @@ const dict = {
     'next.title':"আবেদনের পর কী হবে?",
     'next.step1':"এক কর্মদিবসের মধ্যে আমরা আপনার আবেদন পর্যালোচনা করব।",
     'next.step2':"আপনার দেওয়া ফোন নম্বরে আমাদের টিম কল করবে, সাধারণত ২৪–৪৮ ঘণ্টার মধ্যে।",
-    'next.step3':"সেই কলেই আপনার কোর্স, ব্যাচের সময়, ফি এবং পেমেন্ট পদ্ধতি (বিকাশ/ন নগদ/ব্যাংক/ক্যাশ) নিশ্চিত করা হবে।",
+    'next.step3':"সেই কলেই আপনার কোর্স, ব্যাচের সময়, ফি এবং পেমেন্ট পদ্ধতি (বিকাশ/নগদ/ব্যাংক/ক্যাশ) নিশ্চিত করা হবে।",
     'next.step4':"আমাদের টিমের নির্দেশনা অনুযায়ী পেমেন্ট সম্পন্ন হলেই আপনার আসন সংরক্ষিত হবে।",
     'next.noteText':"অপেক্ষা করতে না চাইলে?",'next.contactBtn':"যোগাযোগ করুন",
-    'contact.title':"যোগাযোগ",'contact.addr.label':"ঠিকানা:",'contact.address':"কলাতিয়া বাজার, কেরানীগঞ্জ মডেল, ঢাকা ১৩১৩",
-    'contact.phone.label':"ফোন:",'contact.email.label':"ইমেইল:",
+    'contact.title':"যোগাযোগ",'contact.addr.label':"ঠিকানা:",'contact.phone.label':"ফোন:",'contact.email.label':"ইমেইল:",'contact.address':"কলাতিয়া বাজার, কেরানীগঞ্জ মডেল, ঢাকা ১৩১৩",
     'contact.social':"ফেসবুক ও ইউটিউব",'contact.fbBtn':"আমাদের ফেসবুক পেজ দেখুন",
     'contact.callLabel':"কল করুন: +৮৮০ ১৮৯২-০৩৭৭৯৩",'contact.waLabel':"হোয়াটসঅ্যাপ: +৮৮০ ১৮৯২-০৩৭৭৯৩",'contact.mailLabel':"ইমেইল: jlanguagecenter@gmail.com",
     'contact.fbNote':"আমাদের ফেসবুক পেজের সাম্প্রতিক পোস্ট এখানে সরাসরি দেখানো হচ্ছে। আরও আপডেটের জন্য আমাদের লাইক ও ফলো করুন।",
     'footer':"সর্বস্বত্ব সংরক্ষিত।"
   },
   ja:{
-    brand:"スキルネスト日本語学校", tagline:"日本語学校",
+    brand:"スキルネスト", tagline:"日本語学校",
     'nav.home':"ホーム",'nav.about':"学校紹介",'nav.courses':"コースと学費",'nav.services':"サービス",'nav.gallery':"ギャラリー",'nav.admission':"入学",'nav.contact':"お問い合わせ",
     'btn.apply':"今すぐ申請",
     'home.eyebrow':"ベンガル語による日本語教育機関",
@@ -826,7 +831,7 @@ const dict = {
     'batch.conv.desc':"会話の自信だけに焦点を当てたコース — すでに日本語をある程度知っていて流暢さを求める方に。",
     'pro.eyebrow':"5年以上の経験",
     'pro.title':"プロの通訳・書類翻訳サービス",
-    'pro.subtitle':"教室での指導に加えて、スキルネスト日本語学校はプレミアムなベンガル語・英語・日本語の通訳および書類翻訳サービスも提供しています — 個人・海外企業双方から信頼されています。",
+    'pro.subtitle':"教室での指導に加えて、スキルネストはプレミアムなベンガル語・英語・日本語の通訳および書類翻訳サービスも提供しています — 個人・海外企業双方から信頼されています。",
     'pro.p1':"ベンガル語・英語・日本語にわたる5年以上の実務通訳・翻訳経験",
     'pro.p2':"すべての通訳セッションの前に事前準備（プレスクリプト作成）を行い、抜け漏れを防止",
     'pro.p3':"納品前にすべての翻訳書類を丁寧に校正",
@@ -835,14 +840,14 @@ const dict = {
     'pro.pricingBtn':"料金を見る",'pro.quoteBtn':"見積もりを依頼",
     'news.label':"📢 お知らせ",
     'news.1':"N5・N4 入学受付中",'news.2':"会話コース来月開講",'news.3':"大使館面接対策コース受付中",
-    'about.title':"スキルネスト日本語学校について",
-    'about.text1':"スキルネスト日本語学校は、日本での勉強や就労を望みながらも、体系的でベンガル語による日本語教育を見つけられずにいるバングラデシュの学生が多いという気づきから始まりました。私たちのプログラムは、まさにそのギャップを埋めるために作られました。",
+    'about.title':"スキルネストについて",
+    'about.text1':"スキルネストは、日本での勉強や就労を望みながらも、体系的でベンガル語による日本語教育を見つけられずにいるバングラデシュの学生が多いという気づきから始まりました。私たちのプログラムは、まさにそのギャップを埋めるために作られました。",
     'about.text2':"授業は日本の語学学校で最も広く使われている教科書Minna no Nihongoに沿って進められるため、ここで学ぶ内容は日本到着後に求められる内容と一致します。各レッスンはまずベンガル語で説明し、その後日本語で練習します — 文法・語彙・JLPT形式の練習問題も含みます。",
     'about.point1':"経験豊富なバイリンガル教師、少人数制",'about.point2':"毎月のJLPT形式模擬試験と詳細なフィードバック",'about.point3':"渡航前の大使館・学校面接指導",'about.point4':"全授業がライブオンライン — 通学不要、欠席の心配なし",
-    'about.principalTitle':"リーダーからのメッセージ",'about.principalMsg':"毎年、自分が思っている以上の力を持つ生徒たちに出会います。彼らに必要なのは正しい指導体系と、本当に理解できる言葉で説明してくれる人です。スキルネスト日本語学校が目指しているのはまさにそれ — 単なる語学コースではなく、最初の日本語の言葉から面接当日まで寄り添う存在です。",
+    'about.principalTitle':"主任講師からのメッセージ",'about.principalMsg':"毎年、自分が思っている以上の力を持つ生徒たちに出会います。彼らに必要なのは正しい指導体系と、本当に理解できる言葉で説明してくれる人です。スキルネストが目指しているのはまさにそれ — 単なる語学コースではなく、最初の日本語の言葉から面接当日まで寄り添う存在です。",
     'track.title':"実績",'track.note':"※ 以下はサンプルです。実際の実績が出たら置き換えてください。",
     'track.since':"設立",'track.students':"卒業生数",'track.passrate':"N5/N4 合格率",'track.inJapan':"現在日本で就学・就労中",
-    'whybd.title':"バングラデシュの学生がスキルネスト日本語学校を選ぶ理由",
+    'whybd.title':"バングラデシュの学生がスキルネストを選ぶ理由",
     'whybd.p1':"まずすべてベンガル語で説明するので、知らない英語や日本語の単語のせいでつまずくことがありません",
     'whybd.p2':"カリキュラムは日本の語学学校で使われるMinna no Nihongoに準拠 — 渡日後に学び直す必要がありません",
     'whybd.p3':"バングラデシュ人応募者が実際に聞かれる内容に基づいた専門の大使館・学校面接指導",
@@ -892,8 +897,7 @@ const dict = {
     'next.step3':"その電話でコース、時間帯、学費、お支払い方法（bKash/Nagad/銀行/現金）を確定します。",
     'next.step4':"担当者の案内に従いお支払いが完了次第、席を確保します。",
     'next.noteText':"お急ぎですか？",'next.contactBtn':"お問い合わせ",
-    'contact.title':"お問い合わせ",'contact.addr.label':"住所：",'contact.address':"カラティヤ・バザール、ケラニガンジ・モデル、ダッカ 1313",
-    'contact.phone.label':"電話：",'contact.email.label':"メール：",
+    'contact.title':"お問い合わせ",'contact.addr.label':"住所：",'contact.phone.label':"電話：",'contact.email.label':"メール：",'contact.address':"カラティヤ・バザール、ケラニガンジ・モデル、ダッカ 1313",
     'contact.social':"Facebook",'contact.fbBtn':"Facebookページを見る",
     'contact.callLabel':"電話：+880 1892-037793",'contact.waLabel':"WhatsApp：+880 1892-037793",'contact.mailLabel':"メール：jlanguagecenter@gmail.com",
     'contact.fbNote':"Facebookページの最新投稿をここに表示しています。最新情報をもっと知りたい方は、いいねとフォローをお願いします。",
@@ -931,5 +935,3 @@ applyLang();
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
 </body>
 </html>
-
-```
