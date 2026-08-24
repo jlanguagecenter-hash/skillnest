@@ -160,15 +160,16 @@
   .shorts-grid::-webkit-scrollbar-thumb{background:var(--border);border-radius:999px}
   .shorts-grid::-webkit-scrollbar-thumb:hover{background:var(--brand-2)}
   .shorts-card {
-    flex: 0 0 auto;
-    width: 140px !important;
-    scroll-snap-align: start;
-    position: relative;
-    padding-top: 130% !important;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #000;
-  }
+  flex: 0 0 auto;
+  width: 140px !important;
+  scroll-snap-align: start;
+  position: relative;
+  padding-top: 0 !important; /* আগের পারসেন্টেজ সিস্টেম বন্ধ করে দেওয়া হলো */
+  aspect-ratio: 9 / 16 !important; /* ভিডিওর অরিজিনাল সাইজ রেশিও */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+}
 
   .gallery-strip {
     display: flex;
@@ -185,8 +186,16 @@
   .gallery-strip::-webkit-scrollbar-track{background:transparent}
   .gallery-strip::-webkit-scrollbar-thumb{background:var(--border);border-radius:999px}
   .gallery-strip::-webkit-scrollbar-thumb:hover{background:var(--brand-2)}
-  .gallery-card{flex:0 0 auto;width:min(78vw,300px);scroll-snap-align:start;
-    border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#f1f5f9}
+  .gallery-card {
+  margin: 0 !important; /* ব্রাউজারের অটোমেটিক গ্যাপ ফোর্স করে জিরো করে দেওয়া হলো */
+  flex: 0 0 auto;
+  width: min(78vw, 300px);
+  scroll-snap-align: start;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #f1f5f9;
+}
   .gallery-card img{width:100%;height:190px;object-fit:cover;display:block}
   .gallery-card .cap{padding:8px 10px;font-size:12.5px;color:var(--muted)}
 
